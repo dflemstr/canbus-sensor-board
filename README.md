@@ -13,6 +13,8 @@ To flash and run the firmware:
   * Install `probe-rs`, a CLI for connecting to debug probes, with `cargo install probe-rs`.
   * Install `flip-link`, a meta-linker that puts the stack at the end of embedded memory, using
     `cargo install flip-link`.
+  * Optionally update the `DEFAULT_CAN_ID` variable in `src/main.rs` if you want to change the CAN
+    bus ID of the board without having to send it a command later.
 
 Flash using a debug probe (easiest):
 
