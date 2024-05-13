@@ -8,7 +8,9 @@ use embassy_stm32::peripherals;
 // For link-time dependencies:
 use {defmt_rtt as _, panic_probe as _};
 
-const CAN_ID_FLASH_OFFSET: u32 = 0;
+// Store the value at the end of flash; very likely won't over-write application code.  But we could
+// tweak the linker script to not place code here if we want to be fool-proof.
+const CAN_ID_FLASH_OFFSET: u32 = (flash::FLASH_SIZE - flash::WRITE_SIZE) as u32;
 const DEFAULT_CAN_ID: u16 = 1;
 
 #[repr(u8)]
