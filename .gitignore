@@ -23,3 +23,8 @@ fp-info-cache
 # Autorouter files (exported from Pcbnew)
 *.dsn
 *.ses
+
+
+# Added by cargo
+
+/target

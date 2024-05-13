@@ -165,29 +165,45 @@
 				)
 			)
 		)
-		(symbol "Connector:Conn_01x04_Pin"
-			(pin_names
-				(offset 1.016) hide)
+		(symbol "Connector:Conn_ARM_SWD_TagConnect_TC2030-NL"
 			(exclude_from_sim no)
-			(in_bom yes)
+			(in_bom no)
 			(on_board yes)
 			(property "Reference" "J"
-				(at 0 5.08 0)
+				(at 2.54 11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "Conn_01x04_Pin"
-				(at 0 -7.62 0)
+			(property "Value" "Conn_ARM_SWD_TagConnect_TC2030-NL"
+				(at 2.54 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Tag-Connect ARM Cortex SWD JTAG connector, 6 pin, no legs"
 				(at 0 0 0)
 				(effects
 					(font
@@ -196,7 +212,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "ki_keywords" "Cortex Debug Connector ARM SWD JTAG"
 				(at 0 0 0)
 				(effects
 					(font
@@ -205,7 +221,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x04, script generated"
+			(property "ki_fp_filters" "*TC2030*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -214,129 +230,11 @@
 					(hide yes)
 				)
 			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x04_Pin_1_1"
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 0.8636 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 2.54) (xy 0.8636 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 0.8636 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 3.81)
-					(name "Pin_1"
+			(symbol "Conn_ARM_SWD_TagConnect_TC2030-NL_0_0"
+				(pin power_in line
+					(at -2.54 10.16 270)
+					(length 2.54)
+					(name "VCC"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -351,10 +249,10 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "Pin_2"
+				(pin bidirectional line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "SWDIO"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -368,11 +266,12 @@
 							)
 						)
 					)
+					(alternate "TMS" bidirectional line)
 				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 3.81)
-					(name "Pin_3"
+				(pin open_collector line
+					(at 7.62 5.08 180)
+					(length 2.54)
+					(name "~{RESET}"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -387,10 +286,10 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 5.08 -5.08 180)
-					(length 3.81)
-					(name "Pin_4"
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "SWCLK"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -403,6 +302,57 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+					(alternate "TCK" output line)
+				)
+				(pin power_in line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 7.62 -5.08 180)
+					(length 2.54)
+					(name "SWO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "TDO" input line)
+				)
+			)
+			(symbol "Conn_ARM_SWD_TagConnect_TC2030-NL_0_1"
+				(rectangle
+					(start -5.08 7.62)
+					(end 5.08 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
 					)
 				)
 			)
@@ -585,6 +535,116 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Connector_Generic:Conn_01x01"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x01_1_1"
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2566,139 +2626,6 @@
 				)
 			)
 		)
-		(symbol "Switch:SW_SPST"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 0 3.175 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SW_SPST"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Single Pole Single Throw (SPST) switch"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch lever"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_SPST_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.524 0.254) (xy 1.524 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SW_SPST_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Transistor_FET:2N7002"
 			(pin_names hide)
 			(exclude_from_sim no)
@@ -3434,12 +3361,6 @@
 		(uuid "08d4b546-853e-42e2-836b-7a7101e73e61")
 	)
 	(junction
-		(at 76.2 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0bf00e8c-81bc-4b6d-934f-ea8392944ff5")
-	)
-	(junction
 		(at 139.7 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3516,12 +3437,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "776fb71c-6d35-4deb-aaff-16b43932d53c")
-	)
-	(junction
-		(at 76.2 114.3)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "85a22dc4-c821-4f13-b9da-ca4ffd71bb7e")
 	)
 	(junction
 		(at 246.38 114.3)
@@ -3642,14 +3557,6 @@
 		(uuid "47443394-9074-4d1f-b947-edd07289912d")
 	)
 	(no_connect
-		(at 132.08 96.52)
-		(uuid "5b92d410-92fa-40bb-b60e-af5f3acdca87")
-	)
-	(no_connect
-		(at 132.08 101.6)
-		(uuid "609edde5-ba79-414d-87f3-aef35b57e540")
-	)
-	(no_connect
 		(at 132.08 78.74)
 		(uuid "650c175c-a7dd-4a40-909a-6b79c58418b7")
 	)
@@ -3658,16 +3565,16 @@
 		(uuid "6982ab68-e241-4d18-bd98-b5db87e354e7")
 	)
 	(no_connect
+		(at 132.08 88.9)
+		(uuid "6ad43349-84b8-43bf-973c-1e8ee217c72a")
+	)
+	(no_connect
 		(at 99.06 124.46)
 		(uuid "7542b4ee-6136-41dd-8754-e0602adf945f")
 	)
 	(no_connect
 		(at 132.08 63.5)
 		(uuid "796ffe0f-e5d0-42eb-8885-47e632874c31")
-	)
-	(no_connect
-		(at 99.06 99.06)
-		(uuid "7a953285-a3df-4b2c-a43b-623b954c2564")
 	)
 	(no_connect
 		(at 132.08 71.12)
@@ -3682,8 +3589,12 @@
 		(uuid "a390e1b8-f312-455c-9a2b-2653758d3d0a")
 	)
 	(no_connect
-		(at 99.06 114.3)
+		(at 132.08 86.36)
 		(uuid "ae6e9c23-b0a2-47a7-9e8f-cead1f664f3d")
+	)
+	(no_connect
+		(at 132.08 91.44)
+		(uuid "bc536100-0668-40de-aa18-2a2db113a289")
 	)
 	(no_connect
 		(at 132.08 76.2)
@@ -3710,7 +3621,7 @@
 		(uuid "e6430eaa-0f3b-450d-8a77-e2f6ba608f18")
 	)
 	(no_connect
-		(at 99.06 111.76)
+		(at 132.08 83.82)
 		(uuid "eea8d4c7-52f8-4a62-9821-ef90498a3da1")
 	)
 	(no_connect
@@ -3833,16 +3744,6 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 93.98) (xy 76.2 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21c26483-560b-4e6f-9616-7954df8a1284")
-	)
-	(wire
-		(pts
 			(xy 116.84 138.43) (xy 114.3 138.43)
 		)
 		(stroke
@@ -3850,16 +3751,6 @@
 			(type default)
 		)
 		(uuid "22f1aa7f-340a-48b4-bf45-912d26dacfdf")
-	)
-	(wire
-		(pts
-			(xy 76.2 100.33) (xy 76.2 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23ccd000-2a9d-436b-8b6a-9c442d82cd38")
 	)
 	(wire
 		(pts
@@ -3923,16 +3814,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 114.3) (xy 64.77 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c4325aa-5a75-420b-9397-14894d8f2995")
-	)
-	(wire
-		(pts
 			(xy 63.5 25.4) (xy 76.2 25.4)
 		)
 		(stroke
@@ -3960,16 +3841,6 @@
 			(type default)
 		)
 		(uuid "419fbeb1-24e6-4d28-a77b-b30ded1b738d")
-	)
-	(wire
-		(pts
-			(xy 76.2 114.3) (xy 77.47 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "42df3582-c8cc-40e2-b7f1-81656c3a2337")
 	)
 	(wire
 		(pts
@@ -4013,16 +3884,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 101.6) (xy 64.77 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b8773c9-aace-491f-973b-069f6a850f11")
-	)
-	(wire
-		(pts
 			(xy 261.62 63.5) (xy 264.16 63.5)
 		)
 		(stroke
@@ -4053,16 +3914,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 101.6) (xy 76.2 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55b050df-7ac9-47cf-a473-46ca27237d30")
-	)
-	(wire
-		(pts
 			(xy 114.3 57.15) (xy 111.76 57.15)
 		)
 		(stroke
@@ -4070,16 +3921,6 @@
 			(type default)
 		)
 		(uuid "56a7539f-f254-46ac-ab0d-1ac8043849d0")
-	)
-	(wire
-		(pts
-			(xy 76.2 101.6) (xy 77.47 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "575b47f9-8879-4388-a176-91aac2caddc4")
 	)
 	(wire
 		(pts
@@ -4193,16 +4034,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 114.3) (xy 76.2 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "74a5ea95-4418-4472-a85d-dd021372d170")
-	)
-	(wire
-		(pts
 			(xy 246.38 60.96) (xy 246.38 63.5)
 		)
 		(stroke
@@ -4220,16 +4051,6 @@
 			(type default)
 		)
 		(uuid "780d35fb-b6fc-403f-b6d9-1bd20922231f")
-	)
-	(wire
-		(pts
-			(xy 76.2 114.3) (xy 76.2 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "79e15cc4-8e6e-45a0-a8f3-72dd112460ef")
 	)
 	(wire
 		(pts
@@ -4380,16 +4201,6 @@
 			(type default)
 		)
 		(uuid "a386cc56-c58d-4ead-be3a-9fc3264e0352")
-	)
-	(wire
-		(pts
-			(xy 76.2 120.65) (xy 76.2 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b234586a-721b-4f3b-91d7-65fe988765f1")
 	)
 	(wire
 		(pts
@@ -4842,28 +4653,6 @@
 		)
 		(uuid "c8600bec-251d-4259-af83-28774ad38216")
 	)
-	(global_label "SYS_SWCLK"
-		(shape input)
-		(at 166.37 138.43 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "02bcd8df-9f55-46cc-97b2-a6827b220680")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 180.0594 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "CANH"
 		(shape input)
 		(at 157.48 76.2 180)
@@ -4948,6 +4737,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWDIO"
+		(shape input)
+		(at 60.96 109.22 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1578029a-4e63-45db-a668-cc43e5a878e2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.8114 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5062,6 +4873,28 @@
 			)
 		)
 	)
+	(global_label "BOOT"
+		(shape input)
+		(at 88.9 152.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3e252bb4-1724-4166-8f9b-49208dff06fc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.0162 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "I2C2_SDA"
 		(shape input)
 		(at 99.06 119.38 180)
@@ -5102,6 +4935,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK"
+		(shape input)
+		(at 60.96 106.68 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4846bbc4-3438-412c-a4d8-6c5c91947576")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 70.1742 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5152,22 +5007,22 @@
 	)
 	(global_label "CAN_RX"
 		(shape input)
-		(at 132.08 83.82 0)
+		(at 99.06 111.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "67d8b66d-17fd-486b-ab3d-e4f2b2c06f45")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 142.2014 83.82 0)
+			(at 88.9386 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5212,6 +5067,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NRST"
+		(shape input)
+		(at 60.96 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6c85c17b-a507-47c9-86c5-de3054b088e2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 68.7228 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5262,7 +5139,7 @@
 	)
 	(global_label "DEBUG_LED1"
 		(shape input)
-		(at 132.08 99.06 0)
+		(at 132.08 101.6 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5272,7 +5149,7 @@
 		)
 		(uuid "8efc5c3c-a8f0-4a07-a183-a9aa3376341c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 146.9789 99.06 0)
+			(at 146.9789 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5348,6 +5225,50 @@
 			)
 		)
 	)
+	(global_label "SWO"
+		(shape input)
+		(at 60.96 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b22d2539-2688-47da-96e4-0fc7c4d50bc7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 67.9366 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWO"
+		(shape input)
+		(at 99.06 99.06 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b3b11a3a-0ea3-4ffc-9b15-b82cb577dfb4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 92.0834 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "I2C2_SCL"
 		(shape input)
 		(at 99.06 116.84 180)
@@ -5366,50 +5287,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SYS_SWDIO"
-		(shape input)
-		(at 166.37 135.89 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b799bc70-515e-4182-9da1-85579dc450a6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 179.6966 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "BOOT"
-		(shape input)
-		(at 77.47 114.3 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "baf99de1-3b4b-4c13-ae29-e4569847a3aa")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 85.3538 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -5438,22 +5315,22 @@
 	)
 	(global_label "NRST"
 		(shape input)
-		(at 77.47 101.6 0)
+		(at 50.8 144.78 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "bd6f4107-e2cd-43e6-83d2-a2d18d59695d")
+		(uuid "bea3c9bc-a6aa-4be2-94fa-6f9fa0153dcd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 85.2328 101.6 0)
+			(at 50.8 152.5428 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5612,9 +5489,31 @@
 			)
 		)
 	)
-	(global_label "SYS_SWCLK"
+	(global_label "NRST"
 		(shape input)
-		(at 132.08 91.44 0)
+		(at 88.9 165.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d4938108-7eae-43ad-bd52-78a04cdfa773")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.1372 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWCLK"
+		(shape input)
+		(at 132.08 99.06 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5624,7 +5523,29 @@
 		)
 		(uuid "d83a6d6e-ea66-4434-bc27-2058818c8a55")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 145.7694 91.44 0)
+			(at 141.2942 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOOT"
+		(shape input)
+		(at 63.5 139.7 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "da95fd6c-f19f-4119-8a68-df471a90e359")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 63.5 131.8162 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5636,22 +5557,22 @@
 	)
 	(global_label "CAN_TX"
 		(shape input)
-		(at 132.08 86.36 0)
+		(at 99.06 114.3 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "ded3eed9-d809-43e8-9277-0f418648827b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 141.899 86.36 0)
+			(at 89.241 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5678,9 +5599,9 @@
 			)
 		)
 	)
-	(global_label "SYS_SWDIO"
+	(global_label "SWDIO"
 		(shape input)
-		(at 132.08 88.9 0)
+		(at 132.08 96.52 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5690,7 +5611,7 @@
 		)
 		(uuid "f267dc92-f338-4c00-9b00-2c0f2fa8b842")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 145.4066 88.9 0)
+			(at 140.9314 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6088,152 +6009,6 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 76.2 118.11 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0dca025b-ba9c-4c8f-9036-7064fe6e395d")
-		(property "Reference" "R4"
-			(at 78.74 116.8399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 78.74 119.3799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 76.2 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 76.2 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 76.2 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "C25744"
-			(at 76.2 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "58637aa8-7be5-4f56-b2f4-92a9c82d4a61")
-		)
-		(pin "1"
-			(uuid "d5eb1875-14ce-4760-bc1d-7b532147555d")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 63.5 101.6 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1091708c-301d-4983-a8c0-f158087678aa")
-		(property "Reference" "#PWR011"
-			(at 57.15 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 59.69 101.5999 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 63.5 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "da3c84ff-388c-4976-b0ce-772fab0c64d0")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
 		(at 215.9 139.7 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6304,6 +6079,72 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 50.8 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "136e49e1-3110-4828-8923-9cfc19ed4088")
+		(property "Reference" "#PWR016"
+			(at 50.8 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 50.8 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 50.8 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6fcab5ea-0dad-4f1c-b2af-6224a66f7530")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -7044,89 +6885,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x04_Pin")
-		(at 161.29 135.89 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2de690df-fdb8-436e-945a-dba2aee4584c")
-		(property "Reference" "J4"
-			(at 161.925 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Debug"
-			(at 161.925 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
-			(at 161.29 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 161.29 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 161.29 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "C2691448"
-			(at 161.29 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "8a1d9336-c82f-4a09-b611-6b5b917e2a44")
-		)
-		(pin "2"
-			(uuid "757eef0f-81f8-45fd-86ab-c8d73617671e")
-		)
-		(pin "1"
-			(uuid "33404e64-6234-4b7e-a380-842d94127d8f")
-		)
-		(pin "3"
-			(uuid "a227958a-768c-48b0-82ff-2751633613f6")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 254 55.88 0)
 		(unit 1)
@@ -7326,33 +7084,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_SPST")
-		(at 69.85 101.6 0)
+		(lib_id "power:+3.3V")
+		(at 50.8 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "30c41e60-e5c7-4616-82dd-51aa197fa51a")
-		(property "Reference" "SW1"
-			(at 69.85 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Reset"
-			(at 69.85 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 69.85 101.6 0)
+		(uuid "37559cb6-d01b-4dfe-bcb7-b333a0ac2823")
+		(property "Reference" "#PWR011"
+			(at 50.8 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7360,8 +7102,16 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 69.85 101.6 0)
+		(property "Value" "+3.3V"
+			(at 50.8 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7369,8 +7119,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Single Pole Single Throw (SPST) switch"
-			(at 69.85 101.6 0)
+		(property "Datasheet" ""
+			(at 50.8 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7378,25 +7128,22 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "C318884"
-			(at 69.85 101.6 0)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 50.8 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "e0f8b272-d3e9-408a-8baa-df4afcbe826b")
 		)
 		(pin "1"
-			(uuid "f16f4ce0-ebd5-4add-a282-0272e0210710")
+			(uuid "bb1f5443-91c5-4f76-b0d6-956bd87f5c38")
 		)
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "SW1")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -7463,6 +7210,73 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 93.98 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "39bf0dbe-a78b-4f7e-af79-ad09861a2fcc")
+		(property "Reference" "J11"
+			(at 96.52 189.2299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 96.52 191.7699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Wire:SolderWirePad_1x01_SMD_1x2mm"
+			(at 93.98 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 93.98 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e34635ff-b81d-4d35-bb03-dca810b34c94")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "J11")
 					(unit 1)
 				)
 			)
@@ -7680,6 +7494,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 93.98 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "3d3d0007-bdcb-468e-996e-2cfdccc9d591")
+		(property "Reference" "J7"
+			(at 96.52 151.1299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 96.52 153.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Wire:SolderWirePad_1x01_SMD_1x2mm"
+			(at 93.98 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 93.98 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3b0e9b5b-2e86-4edc-9902-af29ab0010ab")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Screw_Terminal_01x02")
 		(at 170.18 101.6 0)
 		(unit 1)
@@ -7759,152 +7640,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 63.5 114.3 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "451f3e68-c58c-439a-a965-fb673150e3ce")
-		(property "Reference" "#PWR015"
-			(at 67.31 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 59.69 114.2999 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 63.5 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d2cf4314-a533-4b59-9386-df6a4a74fab5")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 76.2 97.79 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "46c885a0-4a91-4b46-98c9-a14f5882ead7")
-		(property "Reference" "R3"
-			(at 78.74 96.5199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 78.74 99.0599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 76.2 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 76.2 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 76.2 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "C25744"
-			(at 76.2 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3634a6f1-3244-41ad-af80-27f3fc908ff9")
-		)
-		(pin "1"
-			(uuid "467c28bb-b27e-41c7-94b1-f621f9962459")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 261.62 81.28 0)
 		(unit 1)
@@ -7965,6 +7700,73 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 93.98 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "4a20ea35-e647-497c-be0b-37d20c6b2f8a")
+		(property "Reference" "J10"
+			(at 96.52 176.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 96.52 179.0699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Wire:SolderWirePad_1x01_SMD_1x2mm"
+			(at 93.98 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 93.98 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "41e7640b-7fa2-4f49-b19b-353e6142c5d1")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -9207,6 +9009,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_ARM_SWD_TagConnect_TC2030-NL")
+		(at 53.34 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7c5ed28c-b8b6-4657-96eb-e6092aa71ce4")
+		(property "Reference" "J8"
+			(at 46.99 105.4099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_ARM_SWD_TagConnect_TC2030-NL"
+			(at 46.99 107.9499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
+			(at 53.34 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf"
+			(at 53.34 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Tag-Connect ARM Cortex SWD JTAG connector, 6 pin, no legs"
+			(at 53.34 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5422b8e3-0426-4def-b105-bb350240d19e")
+		)
+		(pin "1"
+			(uuid "3f671db6-31ed-455e-9b6e-6d021ef5cf77")
+		)
+		(pin "3"
+			(uuid "cb7f0a78-da53-4d95-9b47-280b0fd2ba02")
+		)
+		(pin "6"
+			(uuid "3411d7e0-f719-4831-8ae2-992e8508bc37")
+		)
+		(pin "5"
+			(uuid "193d08a6-a817-47d7-9c35-9c5432fd125f")
+		)
+		(pin "4"
+			(uuid "5480222f-74c8-4d17-b886-61b69f2d7f42")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 261.62 132.08 0)
 		(unit 1)
@@ -9267,72 +9151,6 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "#PWR036")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 76.2 93.98 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "878837af-55a5-4ba3-805e-7b5301cf84a7")
-		(property "Reference" "#PWR010"
-			(at 76.2 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 76.2 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 76.2 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 76.2 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "538041be-ed13-4942-b279-cd3b95e378bc")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -9629,6 +9447,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 88.9 177.8 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9041ffec-46dc-40d6-a195-d515b1a37920")
+		(property "Reference" "#PWR040"
+			(at 82.55 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 85.09 177.7999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 88.9 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "661d0eff-d5b9-432d-bbb6-88fbb3854f43")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "#PWR040")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 63.5 24.13 0)
 		(unit 1)
@@ -9689,73 +9574,6 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 166.37 133.35 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "923e663e-262a-4338-ab4e-f8e91c504911")
-		(property "Reference" "#PWR017"
-			(at 172.72 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 170.18 133.3499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 166.37 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 166.37 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 166.37 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "87377d24-2038-42e5-995f-f1a973b3c05d")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -10100,6 +9918,152 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 50.8 142.24 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9f7656d2-511e-441f-a4a5-8e24a6c5310d")
+		(property "Reference" "R3"
+			(at 53.34 140.9699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 53.34 143.5099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 50.8 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 50.8 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 50.8 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C25744"
+			(at 50.8 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d39ff07f-1396-42e8-b195-129425c9f795")
+		)
+		(pin "1"
+			(uuid "3ec552a0-e045-471b-ba68-44ffde73b3c1")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 50.8 190.5 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a122a74e-6363-4724-b17d-e584ca55717f")
+		(property "Reference" "#PWR015"
+			(at 54.61 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 46.99 190.4999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 50.8 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d2705658-deea-4086-8bdc-c2d2aeff6f4d")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -10473,6 +10437,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 55.88 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "b922bcf7-e9cc-48a7-81eb-d2866b4a50d2")
+		(property "Reference" "J4"
+			(at 58.42 189.2299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 58.42 191.7699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Wire:SolderWirePad_1x01_SMD_1x2mm"
+			(at 55.88 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 55.88 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 55.88 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c2dd465b-e918-4b6e-9a20-6e9216101cee")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_FET:2N7002")
 		(at 254 137.16 270)
 		(unit 1)
@@ -10626,6 +10657,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 88.9 190.5 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c4aa152e-7266-44a7-8977-8de1539d8148")
+		(property "Reference" "#PWR041"
+			(at 92.71 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 85.09 190.4999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 88.9 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fa9dab7a-2d17-4639-9d45-dfc960f935ad")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_FET:2N7002")
 		(at 254 86.36 270)
 		(unit 1)
@@ -10694,6 +10792,73 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 93.98 165.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "ca91630e-c846-490d-a738-baca70fd4f50")
+		(property "Reference" "J9"
+			(at 96.52 163.8299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 96.52 166.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Wire:SolderWirePad_1x01_SMD_1x2mm"
+			(at 93.98 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 93.98 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b0250363-6d5e-4c82-be02-a0134283c2f8")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -11304,6 +11469,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 50.8 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d792357c-d6db-49d0-bab8-dcc18170cb34")
+		(property "Reference" "#PWR010"
+			(at 50.8 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 50.8 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 50.8 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1b281d6a-0400-4522-9d73-2e1a54eb4664")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 254 81.28 0)
 		(unit 1)
@@ -11595,72 +11826,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 76.2 121.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e22e1b2b-f400-45ef-b0dc-c698c87e967f")
-		(property "Reference" "#PWR014"
-			(at 76.2 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 76.2 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 76.2 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 76.2 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "52be8290-cdd6-4eb7-b676-e168bdc7ae77")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 228.6 30.48 0)
 		(unit 1)
@@ -11799,83 +11964,6 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_SPST")
-		(at 69.85 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e92fbdcc-dd6a-488a-a644-706672478373")
-		(property "Reference" "SW2"
-			(at 69.85 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Boot"
-			(at 69.85 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
-			(at 69.85 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 69.85 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Single Pole Single Throw (SPST) switch"
-			(at 69.85 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "C318884"
-			(at 69.85 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ea961879-bc74-4e44-9272-32b5cf139a22")
-		)
-		(pin "1"
-			(uuid "b32e801f-67ba-4b08-b1b0-9b847d65b1c4")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "SW2")
 					(unit 1)
 				)
 			)
@@ -12103,6 +12191,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 63.5 142.24 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f3821a0f-564f-49c6-9474-cbeace74cca4")
+		(property "Reference" "R4"
+			(at 66.04 140.9699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 66.04 143.5099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 63.5 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 63.5 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C25744"
+			(at 63.5 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d625760b-79ce-466b-a466-224b56b0cbb1")
+		)
+		(pin "1"
+			(uuid "9e45b44b-9ca9-41e1-a2de-1eb289536471")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 43.18 73.66 270)
 		(unit 1)
@@ -12170,17 +12337,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 166.37 140.97 270)
+		(lib_id "power:GND")
+		(at 63.5 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "fcce0fa3-5dba-4ad6-a723-21434e1222fb")
-		(property "Reference" "#PWR016"
-			(at 162.56 140.97 0)
+		(uuid "f9cfe5ff-41e3-430a-8137-70bb51aad47b")
+		(property "Reference" "#PWR017"
+			(at 63.5 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12188,17 +12355,16 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 170.18 140.9699 90)
+		(property "Value" "GND"
+			(at 63.5 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 166.37 140.97 0)
+			(at 63.5 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12207,7 +12373,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 166.37 140.97 0)
+			(at 63.5 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12215,8 +12381,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 166.37 140.97 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 63.5 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12225,12 +12391,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "a4b5844a-439e-4565-87c8-6cd7015272f3")
+			(uuid "24689eda-a98c-428e-bf65-1757836dc1d8")
 		)
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR016")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
