@@ -1,4 +1,5 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
+linker = "flip-link"
 runner = "probe-rs run --chip STM32F103C8"
 
 [build]
