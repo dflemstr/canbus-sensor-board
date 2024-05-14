@@ -2626,7 +2626,7 @@
 				)
 			)
 		)
-		(symbol "Transistor_FET:2N7002"
+		(symbol "Transistor_FET:AO3400A"
 			(pin_names hide)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2640,7 +2640,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "2N7002"
+			(property "Value" "AO3400A"
 				(at 5.08 0 0)
 				(effects
 					(font
@@ -2660,7 +2660,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
+			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
 				(at 5.08 -3.81 0)
 				(effects
 					(font
@@ -2670,7 +2670,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+			(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2679,7 +2679,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "N-Channel Switching MOSFET"
+			(property "ki_keywords" "N-Channel MOSFET"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2697,7 +2697,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "2N7002_0_1"
+			(symbol "AO3400A_0_1"
 				(polyline
 					(pts
 						(xy 0.254 0) (xy -2.54 0)
@@ -2864,7 +2864,7 @@
 					)
 				)
 			)
-			(symbol "2N7002_1_1"
+			(symbol "AO3400A_1_1"
 				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -6151,6 +6151,80 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:AO3400A")
+		(at 254 111.76 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1405d6cd-930b-4231-8c80-1e5aee62ef12")
+		(property "Reference" "Q3"
+			(at 254 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AO3400A"
+			(at 254 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 252.095 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(at 250.19 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
+			(at 254 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "2afb2f06-d78d-4601-a5e8-52d4b02c5dcd")
+		)
+		(pin "2"
+			(uuid "56e6c371-bba5-4109-bc6b-940cd02feccf")
+		)
+		(pin "1"
+			(uuid "37634277-2452-4c0e-98dd-4f942338f48a")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 261.62 83.82 180)
 		(unit 1)
@@ -6291,6 +6365,80 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:AO3400A")
+		(at 254 60.96 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1d661c1a-6780-4451-8371-06745ae41d25")
+		(property "Reference" "Q1"
+			(at 254 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AO3400A"
+			(at 254 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 252.095 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(at 250.19 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
+			(at 254 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "2ac370e4-7dd0-41c5-90b8-afa7ffb85cf9")
+		)
+		(pin "2"
+			(uuid "5f73b822-dad6-4955-be73-d9b50de02567")
+		)
+		(pin "1"
+			(uuid "5d7d1537-e6f9-4880-a512-c517d6dd46ab")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -7852,80 +8000,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:2N7002")
-		(at 254 111.76 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4db4a0dc-1986-4228-8321-b3eb7f0cab52")
-		(property "Reference" "Q3"
-			(at 254 118.11 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2N7002"
-			(at 254 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 252.095 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
-			(at 250.19 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
-			(at 254 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "afb90774-f515-47de-8f16-6c749f1a0ef8")
-		)
-		(pin "3"
-			(uuid "711f1526-78e1-47af-b221-27b382f59ced")
-		)
-		(pin "2"
-			(uuid "755922d3-fb5d-4eaa-b8d7-80da22d0aa77")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "Q3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 38.1 24.13 0)
 		(unit 1)
@@ -8489,6 +8563,80 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:AO3400A")
+		(at 254 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "673e50ef-7aec-4a32-b0d8-70faf36971ab")
+		(property "Reference" "Q4"
+			(at 254 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AO3400A"
+			(at 254 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 252.095 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(at 250.19 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
+			(at 254 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "db067342-1963-4935-9afa-1b47b0802af2")
+		)
+		(pin "2"
+			(uuid "a1b24f06-8fd1-4a19-826c-ba84af842613")
+		)
+		(pin "1"
+			(uuid "260f1909-368d-4b5f-a519-2fe2493f3f6b")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED_Small")
 		(at 76.2 31.75 90)
 		(unit 1)
@@ -8562,80 +8710,6 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:2N7002")
-		(at 254 60.96 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6db99516-8962-4cc5-bcdb-d31b01bdde2d")
-		(property "Reference" "Q1"
-			(at 254 67.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2N7002"
-			(at 254 69.85 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 252.095 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
-			(at 250.19 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
-			(at 254 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "18a45c5f-1284-4606-9f2d-be59d5a914e1")
-		)
-		(pin "3"
-			(uuid "fbf44ea8-967e-42f3-b5b5-9c37b60eea86")
-		)
-		(pin "2"
-			(uuid "c6921c11-2592-46ca-b6ed-ed184576fee5")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -10504,80 +10578,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:2N7002")
-		(at 254 137.16 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bde031da-15dd-479f-8720-1d6ef0701d18")
-		(property "Reference" "Q4"
-			(at 254 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2N7002"
-			(at 254 146.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 252.095 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
-			(at 250.19 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
-			(at 254 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "400af19c-0bf3-4b83-a96a-6b654dc46f38")
-		)
-		(pin "3"
-			(uuid "86b654da-f238-44f4-a2fc-2eb9e22d95a4")
-		)
-		(pin "2"
-			(uuid "36dbf686-1302-488c-9bcc-5de25bcb8717")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "Q4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 139.7 31.75 0)
 		(unit 1)
@@ -10718,80 +10718,6 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "#PWR041")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:2N7002")
-		(at 254 86.36 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c6a27a8b-79f6-4604-89b9-75753d095947")
-		(property "Reference" "Q2"
-			(at 254 92.71 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2N7002"
-			(at 254 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 252.095 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
-			(at 250.19 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
-			(at 254 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d4912312-8776-4e58-a2db-a6ca1b1af5c0")
-		)
-		(pin "3"
-			(uuid "2c61ce6c-4272-4c56-9a8b-d6bec8ba82bc")
-		)
-		(pin "2"
-			(uuid "8e4c5c61-1e4a-46f9-b31a-cab3e98890fc")
-		)
-		(instances
-			(project "canbus-sensor-board"
-				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -11753,6 +11679,80 @@
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
 					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:AO3400A")
+		(at 254 86.36 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dde67ff7-07dd-4c5a-9c74-702280431362")
+		(property "Reference" "Q2"
+			(at 254 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AO3400A"
+			(at 254 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 252.095 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(at 250.19 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
+			(at 254 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "1cd557e8-6fe4-45c4-947a-9a339948a862")
+		)
+		(pin "2"
+			(uuid "99858409-5656-4143-ac9f-cac22a07963f")
+		)
+		(pin "1"
+			(uuid "cb5e362d-aeb3-4253-b9cb-2d9c59586664")
+		)
+		(instances
+			(project "canbus-sensor-board"
+				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
+					(reference "Q2")
 					(unit 1)
 				)
 			)
