@@ -70,7 +70,7 @@ async fn main(spawner: embassy_executor::Spawner) {
         Irqs,
         p.DMA1_CH6,
         p.DMA1_CH7,
-        time::Hertz(500_000),
+        time::Hertz(config::I2C1_BITRATE),
         Default::default(),
     );
     let i2c2 = i2c::I2c::new(
@@ -80,7 +80,7 @@ async fn main(spawner: embassy_executor::Spawner) {
         Irqs,
         p.DMA1_CH4,
         p.DMA1_CH5,
-        time::Hertz(500_000),
+        time::Hertz(config::I2C2_BITRATE),
         Default::default(),
     );
 

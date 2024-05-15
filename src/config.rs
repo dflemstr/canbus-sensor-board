@@ -9,6 +9,9 @@ pub const CAN_BITRATE: u32 = 1_000_000;
 /// The default CAN ID to use if no override is stored in flash.
 pub const DEFAULT_CAN_ID: u16 = 1;
 
+pub const I2C1_BITRATE: u32 = 500_000;
+pub const I2C2_BITRATE: u32 = 500_000;
+
 /// Time between sensor polls if the value recently changed
 pub const POLL_DELAY_CHANGED: embassy_time::Duration = embassy_time::Duration::from_millis(10);
 
