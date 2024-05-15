@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+as5600 = { version = "0.8.0", features = ["async"] }
 bitflags = "2.5.0"
 cortex-m = { version = "0.7.7", features = ["inline-asm", "critical-section-single-core"] }
 cortex-m-rt = "0.7.4"
@@ -20,6 +21,7 @@ heapless = { version = "0.8.0", default-features = false }
 num-derive = "0.4.2"
 num-traits = { version = "0.2.19", default-features = false }
 panic-probe = { version = "0.3.2", features = ["print-defmt"] }
+static_cell = "2.1.0"
 
 [profile.dev]
 opt-level = "s"
