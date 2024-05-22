@@ -63,6 +63,8 @@ async fn main(spawner: embassy_executor::Spawner) {
 
     let can = can::Can::new(p.CAN, p.PB8, p.PB9, Irqs);
 
+    let mut i2c_config = i2c::Config::default();
+    i2c_config.timeout = embassy_time::Duration::from_millis(100);
     let i2c1 = i2c::I2c::new(
         p.I2C1,
         p.PB6,
@@ -71,7 +73,7 @@ async fn main(spawner: embassy_executor::Spawner) {
         p.DMA1_CH6,
         p.DMA1_CH7,
         time::Hertz(config::I2C1_BITRATE),
-        Default::default(),
+        i2c_config,
     );
     let i2c2 = i2c::I2c::new(
         p.I2C2,
@@ -81,7 +83,7 @@ async fn main(spawner: embassy_executor::Spawner) {
         p.DMA1_CH4,
         p.DMA1_CH5,
         time::Hertz(config::I2C2_BITRATE),
-        Default::default(),
+        i2c_config,
     );
 
     let sensor1 = SENSOR1.init(sensors::Sensor::new(i2c1));

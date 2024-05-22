@@ -1,5 +1,5 @@
 use crate::{config, protocol, status};
-use embassy_stm32::{i2c, mode, peripherals};
+use embassy_stm32::{flash, i2c, mode, peripherals};
 use embassy_sync::blocking_mutex::raw;
 use embassy_sync::{channel, mutex};
 
@@ -54,37 +54,52 @@ where
         Self { state }
     }
 
-    pub async fn handle_config_msg(&self, can_message: &[u8]) -> Result<(), protocol::ErrorCode> {
+    pub async fn handle_config_msg(
+        &self,
+        can_message: &[u8],
+        flash: &mut flash::Flash<'_, flash::Blocking>,
+        flash_offset: u32,
+    ) -> Result<(), protocol::ErrorCode> {
         use num_traits::FromPrimitive as _;
 
-        if let &[sensor_kind, sensor_config, ..] = can_message {
+        if let &[sensor_kind, sensor_config, persist, ..] = can_message {
             let sensor_kind = protocol::SensorKind::from_u8(sensor_kind)
                 .ok_or(protocol::ErrorCode::BadSensorKindParam)?;
             let sensor_config = protocol::SensorConfig::from_bits(sensor_config)
                 .ok_or(protocol::ErrorCode::BadSensorConfigParam)?;
-            let enabled = sensor_config.contains(protocol::SensorConfig::Enable);
-            let subscribed = sensor_config.contains(protocol::SensorConfig::Subscribe);
-            defmt::info!(
-                "configuring sensor 2 as kind={}, enabled={}, subscribed={}",
-                sensor_kind,
-                enabled,
-                subscribed,
-            );
 
-            let mut state = self.state.lock().await;
-            state.enabled = enabled;
-            state.subscribed = subscribed;
-            match sensor_kind {
-                protocol::SensorKind::Unassigned => {
-                    state.make_unassigned();
-                }
-                protocol::SensorKind::AS5600 => {
-                    state.make_as5600();
-                }
+            if persist == 1 {
+                crate::core::write_sensor_config(flash, flash_offset, sensor_kind, sensor_config)
+                    .map_err(|_| protocol::ErrorCode::SensorConfigAlreadyWritten)?;
             }
+
+            self.configure(sensor_kind, sensor_config).await;
+
             Ok(())
         } else {
             Err(protocol::ErrorCode::MessageTooShort)
+        }
+    }
+
+    pub async fn configure(&self, kind: protocol::SensorKind, config: protocol::SensorConfig) {
+        let enabled = config.contains(protocol::SensorConfig::Enable);
+        let subscribed = config.contains(protocol::SensorConfig::Subscribe);
+        defmt::info!(
+            "configuring sensor as kind={}, enabled={}, subscribed={}",
+            kind,
+            enabled,
+            subscribed,
+        );
+        let mut state = self.state.lock().await;
+        state.enabled = enabled;
+        state.subscribed = subscribed;
+        match kind {
+            protocol::SensorKind::Unassigned => {
+                state.make_unassigned();
+            }
+            protocol::SensorKind::AS5600 => {
+                state.make_as5600();
+            }
         }
     }
 
@@ -115,7 +130,9 @@ where
 
             if state.enabled() && state.subscribed() {
                 if let Ok(angle) = state.read_angle().await {
-                    if prev_angle != angle {
+                    if (prev_angle as i32 - angle as i32).abs() as u16
+                        > config::SUBSCRIPTION_MIN_ANGLE_DELTA
+                    {
                         defmt::info!("new angle value: {}", angle);
                         readings.send(angle).await;
                         prev_angle = angle;

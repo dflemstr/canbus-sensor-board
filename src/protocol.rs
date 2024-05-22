@@ -1,30 +1,53 @@
+//! CAN-bus protocol for the device.
+//!
+//! # Overview
+//!
+//! A CAN-bus message is up to 8 bytes long and will always use the ID of this device for all
+//! messages.
+//!
+//! Here's the allowed combinations of 8 byte message payloads:
+//!
+//! | B0     | B1 | B2 | B3 | B4 | B5 | B6 | B7 | Description |
+//! |--------|----------------------------------|-------------|
+//! | `0x01` |    |    |    |    |    |    |    | A message indicating that the previous message was handled successfully. |
+//! | `0x02` |  E |    |    |    |    |    |    | A message indicating that the previous message generated an error; look at the following `ErrorCode` for details |
+//! | `0x03` |  S | v0 | v1 |    |    |    |    | A message with sensor readings from the specified sensor. |
+//! | `0x04` |  S |    |    |    |    |    |    | Read the value off of the specified sensor. This will generate a `SensorReading` response. |
+//! | `0x05` |id0 |id1 |  W |    |    |    |    | Update the CAN ID of this node; optionally persisting it. The following `Ok` response will use the new ID. Wait for the response before sending new messages, as messages will otherwise be ignored. |
+//! | `0x06` |  S | SK | SC |  W |    |    |    |
+//!
+//! Empty cell = Reserved byte, can be set to 0.<br>
+//! S = Byte of type `SensorId`<br>
+//! SK = Byte of type `SensorKind`<br>
+//! SC = Byte of type `SensorConfig`<br>
+//! E = Byte of type `ErrorCode`<br>
+//! W = Set to 1 to write the configuration persistently to flash. Can only be done once; the entire
+//!   chip needs to be mass-erased and re-programmed to reset the state.<br>
+//! `[id0, id1]` = 16-bit CAN-bus ID in big endian byte order.<br>
+//! `[v0, v1]` = 16-bit sensor reading in big endian byte order. Angles are represented from
+//!   `0x0000` to `0xffff` for a full rotation.<br>
+//!
+
 use embassy_stm32::can;
 
 #[repr(u8)]
 #[derive(num_derive::FromPrimitive, defmt::Format)]
-pub enum CanRequestId {
+pub enum CanMessageKind {
     // Skip 0 to avoid issues with sender mistakenly sending a zeroed buffer
-    /// Read all currently configured sensors and reply with messages containing sensor readings
-    ReadSensors = 1,
-    /// Change the CAN id of this node.  This setting is persisted in flash.
-    SetCanId = 2,
-    /// Configure the sensor in sensor slot 1.
-    ///
-    /// This sensor is assumed to be connected to I2C bus 1.
-    ConfigSensor1 = 3,
-    /// Configure the sensor in sensor slot 2.
-    ///
-    /// This sensor is assumed to be connected to I2C bus 2.
-    ConfigSensor2 = 4,
-}
-
-#[repr(u8)]
-#[derive(num_derive::FromPrimitive, defmt::Format)]
-pub enum CanResponseId {
-    // Skip 0 to avoid issues with sender mistakenly sending a zeroed buffer
+    /// The previous message was handled successfully.
     Ok = 1,
+    /// The previous message generated an error; an `ErrorCode` follows.
     Error = 2,
+    /// The message contains a sensor reading for a previously configured sensor.  Sent by the
+    /// device as a response to a previous `ReadSensor` command, or from a sensor that is
+    /// enabled and configured with the `SensorConfig::Subscribe` bit set.
     SensorReading = 3,
+    /// Read the value for the specified sensor, or use sensor id 0 to read all sensors.
+    ReadSensor = 4,
+    /// Change the CAN id of this node.
+    SetCanId = 5,
+    /// Configure a sensor.
+    ConfigSensor = 6,
 }
 
 #[repr(u8)]
@@ -35,12 +58,17 @@ pub enum ErrorCode {
     UnknownCommand = 2,
     MessageTooShort = 3,
     BadCanIdParam = 4,
-    BadSensorKindParam = 5,
-    BadSensorConfigParam = 6,
+    BadSensorIdParam = 5,
+    BadSensorKindParam = 6,
+    BadSensorConfigParam = 7,
+    /// The CAN ID can only be overwritten once per flash cycle; the chip must be mass-erased to
+    /// enable another write.
+    CanIdAlreadyWritten = 8,
+    SensorConfigAlreadyWritten = 9,
 }
 
 #[repr(u8)]
-#[derive(num_derive::FromPrimitive, defmt::Format)]
+#[derive(Clone, Copy, num_derive::FromPrimitive, defmt::Format)]
 pub enum SensorKind {
     /// Unassigned sensor kind. Only allowed if the sensor is also disabled.
     Unassigned = 0,
@@ -48,14 +76,15 @@ pub enum SensorKind {
 }
 
 #[repr(u8)]
-#[derive(num_derive::FromPrimitive, defmt::Format)]
+#[derive(Clone, Copy, num_derive::FromPrimitive, defmt::Format)]
 pub enum SensorId {
     // Skip 0 to avoid issues with sender mistakenly sending a zeroed buffer
     Sensor1 = 1,
     Sensor2 = 2,
 }
 
-#[derive(defmt::Format)]
+#[derive(Clone, Copy, defmt::Format)]
+#[repr(transparent)]
 pub struct SensorConfig(u8);
 
 bitflags::bitflags! {
@@ -69,13 +98,13 @@ bitflags::bitflags! {
 }
 
 pub fn ok_frame(id: can::StandardId) -> can::Frame {
-    defmt::unwrap!(can::frame::Frame::new_data(id, &[CanResponseId::Ok as u8]))
+    defmt::unwrap!(can::frame::Frame::new_data(id, &[CanMessageKind::Ok as u8]))
 }
 
 pub fn error_frame(id: can::StandardId, error_code: ErrorCode) -> can::Frame {
     defmt::unwrap!(can::frame::Frame::new_data(
         id,
-        &[CanResponseId::Error as u8, error_code as u8,]
+        &[CanMessageKind::Error as u8, error_code as u8,]
     ))
 }
 
@@ -83,6 +112,6 @@ pub fn readings_frame(id: can::StandardId, sensor: SensorId, value: u16) -> can:
     let [v0, v1] = value.to_be_bytes();
     defmt::unwrap!(can::frame::Frame::new_data(
         id,
-        &[CanResponseId::SensorReading as u8, sensor as u8, v0, v1]
+        &[CanMessageKind::SensorReading as u8, sensor as u8, v0, v1]
     ))
 }

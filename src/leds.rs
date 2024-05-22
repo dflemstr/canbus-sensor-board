@@ -25,10 +25,14 @@ impl<'a> Leds<'a> {
 
 impl Leds<'static> {
     pub fn show_startup_blinkenlights(&self, spawner: embassy_executor::Spawner) {
-        defmt::unwrap!(spawner.spawn(show_startup_blinkenlights(*self)));
+        if let Err(err) = spawner.spawn(show_startup_blinkenlights(*self)) {
+            defmt::warn!("could not spawn show_startup_blinkenlights: {}", err);
+        }
     }
     pub fn show_error_code(&self, spawner: embassy_executor::Spawner, blinks: u32) {
-        defmt::unwrap!(spawner.spawn(show_error_code(*self, blinks)))
+        if let Err(err) = spawner.spawn(show_error_code(*self, blinks)) {
+            defmt::warn!("could not spawn show_error_code: {}", err);
+        }
     }
 }
 
