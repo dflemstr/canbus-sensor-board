@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use embassy_stm32::{can, flash, gpio, i2c, pac, peripherals, time};
+use embassy_stm32::{can, flash, gpio, i2c, pac, peripherals};
 use embassy_sync::mutex;
 // For link-time dependencies:
 use {defmt_rtt as _, panic_probe as _};
@@ -64,7 +64,7 @@ async fn main(spawner: embassy_executor::Spawner) {
     let can = can::Can::new(p.CAN, p.PB8, p.PB9, Irqs);
 
     let mut i2c_config = i2c::Config::default();
-    i2c_config.timeout = embassy_time::Duration::from_millis(100);
+    i2c_config.timeout = config::I2C1_TIMEOUT;
     let i2c1 = i2c::I2c::new(
         p.I2C1,
         p.PB6,
@@ -72,9 +72,10 @@ async fn main(spawner: embassy_executor::Spawner) {
         Irqs,
         p.DMA1_CH6,
         p.DMA1_CH7,
-        time::Hertz(config::I2C1_BITRATE),
+        config::I2C1_BITRATE,
         i2c_config,
     );
+    i2c_config.timeout = config::I2C2_TIMEOUT;
     let i2c2 = i2c::I2c::new(
         p.I2C2,
         p.PB10,
@@ -82,7 +83,7 @@ async fn main(spawner: embassy_executor::Spawner) {
         Irqs,
         p.DMA1_CH4,
         p.DMA1_CH5,
-        time::Hertz(config::I2C2_BITRATE),
+        config::I2C2_BITRATE,
         i2c_config,
     );
 

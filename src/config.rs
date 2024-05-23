@@ -1,4 +1,4 @@
-use embassy_stm32::flash;
+use embassy_stm32::{flash, time};
 
 // Store the values at the end of flash; very likely won't over-write application code.  But we
 // could tweak the linker script to not place code here if we want to be fool-proof.
@@ -11,8 +11,12 @@ pub const CAN_BITRATE: u32 = 1_000_000;
 /// The default CAN ID to use if no override is stored in flash.
 pub const DEFAULT_CAN_ID: u16 = 1;
 
-pub const I2C1_BITRATE: u32 = 500_000;
-pub const I2C2_BITRATE: u32 = 500_000;
+pub const I2C1_BITRATE: time::Hertz = time::hz(500_000);
+pub const I2C1_TIMEOUT: embassy_time::Duration =
+    embassy_time::Duration::from_millis(100);
+pub const I2C2_BITRATE: time::Hertz = time::hz(500_000);
+pub const I2C2_TIMEOUT: embassy_time::Duration =
+    embassy_time::Duration::from_millis(100);
 
 /// Time between sensor polls if the value recently changed
 pub const POLL_DELAY_CHANGED: embassy_time::Duration = embassy_time::Duration::from_millis(10);
