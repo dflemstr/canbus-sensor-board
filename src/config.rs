@@ -43,6 +43,6 @@ pub const ERROR_DELAY_BETWEEN_BLINK_GROUPS: embassy_time::Duration =
 /// Number of times we will blink out the same error code before moving on.
 pub const ERROR_NUM_BLINK_GROUPS: u32 = 3;
 
-/// Delay between blinkenlights changing during startup
-pub const STARTUP_BLINKENLIGHTS_DELAY: embassy_time::Duration =
+/// Delay between watchdog blinks
+pub const WATCHDOG_DELAY_BETWEEN_BLINKS: embassy_time::Duration =
     embassy_time::Duration::from_millis(500);

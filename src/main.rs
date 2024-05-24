@@ -29,7 +29,6 @@ async fn main(spawner: embassy_executor::Spawner) {
     // Store these as static so that they get `'static` lifetime and survive when `main()` exits
     static G_LED: static_cell::StaticCell<leds::Led> = static_cell::StaticCell::new();
     static Y_LED: static_cell::StaticCell<leds::Led> = static_cell::StaticCell::new();
-    static R_LED: static_cell::StaticCell<leds::Led> = static_cell::StaticCell::new();
     static SENSOR1: static_cell::StaticCell<sensors::Sensor1> = static_cell::StaticCell::new();
     static SENSOR1_CHANNEL: sensors::ReadingsChannel = sensors::ReadingsChannel::new();
     static SENSOR2: static_cell::StaticCell<sensors::Sensor2> = static_cell::StaticCell::new();
@@ -53,13 +52,8 @@ async fn main(spawner: embassy_executor::Spawner) {
         gpio::Level::Low,
         gpio::Speed::Low,
     )));
-    let r_led = R_LED.init(mutex::Mutex::new(gpio::Output::new(
-        p.PA15,
-        gpio::Level::Low,
-        gpio::Speed::Low,
-    )));
 
-    let leds = leds::Leds::new(r_led, y_led, g_led);
+    let leds = leds::Leds::new(g_led, y_led);
 
     let can = can::Can::new(p.CAN, p.PB8, p.PB9, Irqs);
 
@@ -103,10 +97,10 @@ async fn main(spawner: embassy_executor::Spawner) {
     )
     .await;
 
-    leds.show_startup_blinkenlights(spawner);
     defmt::unwrap!(spawner.spawn(poll_sensor1(sensor1, SENSOR1_CHANNEL.sender(), signaller)));
     defmt::unwrap!(spawner.spawn(poll_sensor2(sensor2, SENSOR2_CHANNEL.sender(), signaller)));
     defmt::unwrap!(spawner.spawn(run_core(core)));
+    defmt::unwrap!(spawner.spawn(blink_watchdog(leds)));
 
     // OK, all tasks started, now we go to sleep. Purely interrupt driven from here.
 }
@@ -133,4 +127,11 @@ async fn poll_sensor2(
     signaller: status::LedsSignaller,
 ) {
     sensor2.poll_forever(readings, signaller).await;
+}
+
+#[embassy_executor::task]
+async fn blink_watchdog(leds: leds::Leds<'static>) {
+    loop {
+        leds.blink_watchdog().await;
+    }
 }
