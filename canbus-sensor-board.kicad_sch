@@ -3954,7 +3954,7 @@
 		(uuid "d07cc498-9d66-4a01-86de-9df2932b5f9d")
 	)
 	(no_connect
-		(at 50.8 71.12)
+		(at 165.1 134.62)
 		(uuid "dbffd784-f30b-4992-8c18-081a5d5e18f3")
 	)
 	(no_connect
@@ -4083,7 +4083,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 76.2) (xy 165.1 76.2)
+			(xy 53.34 88.9) (xy 54.61 88.9)
 		)
 		(stroke
 			(width 0)
@@ -4233,7 +4233,7 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 76.2) (xy 158.75 76.2)
+			(xy 46.99 88.9) (xy 48.26 88.9)
 		)
 		(stroke
 			(width 0)
@@ -4293,7 +4293,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 120.65) (xy 166.37 120.65)
+			(xy 48.26 63.5) (xy 40.64 63.5)
 		)
 		(stroke
 			(width 0)
@@ -4313,7 +4313,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 73.66) (xy 50.8 73.66)
+			(xy 163.83 137.16) (xy 165.1 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4413,7 +4413,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 63.5) (xy 31.75 67.31)
+			(xy 190.5 25.4) (xy 190.5 29.21)
 		)
 		(stroke
 			(width 0)
@@ -4483,7 +4483,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 73.66) (xy 44.45 73.66)
+			(xy 157.48 137.16) (xy 158.75 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4543,7 +4543,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 120.65) (xy 172.72 120.65)
+			(xy 35.56 63.5) (xy 34.29 63.5)
 		)
 		(stroke
 			(width 0)
@@ -4583,7 +4583,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 72.39) (xy 31.75 76.2)
+			(xy 190.5 34.29) (xy 190.5 38.1)
 		)
 		(stroke
 			(width 0)
@@ -4683,7 +4683,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 120.65) (xy 153.67 120.65)
+			(xy 54.61 63.5) (xy 53.34 63.5)
 		)
 		(stroke
 			(width 0)
@@ -4733,7 +4733,7 @@
 	)
 	(text "Peak power usage: 250mW"
 		(exclude_from_sim no)
-		(at 62.23 78.74 0)
+		(at 176.53 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4743,7 +4743,7 @@
 	)
 	(global_label "CANH"
 		(shape input)
-		(at 157.48 76.2 180)
+		(at 46.99 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4753,7 +4753,7 @@
 		)
 		(uuid "0463c637-20a2-4c50-b7cd-f21c300b8287")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 149.4752 76.2 0)
+			(at 38.9852 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4765,7 +4765,7 @@
 	)
 	(global_label "CAN_RX"
 		(shape input)
-		(at 50.8 66.04 180)
+		(at 165.1 129.54 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4775,7 +4775,7 @@
 		)
 		(uuid "0d5be6c0-c2cf-4aa1-be2a-8febf48eb3e4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 40.6786 66.04 0)
+			(at 154.9786 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4787,7 +4787,7 @@
 	)
 	(global_label "SWDIO"
 		(shape input)
-		(at 60.96 109.22 0)
+		(at 60.96 119.38 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4797,7 +4797,7 @@
 		)
 		(uuid "1578029a-4e63-45db-a668-cc43e5a878e2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 69.8114 109.22 0)
+			(at 69.8114 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4985,7 +4985,7 @@
 	)
 	(global_label "SWCLK"
 		(shape input)
-		(at 60.96 106.68 0)
+		(at 60.96 116.84 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4995,7 +4995,7 @@
 		)
 		(uuid "4846bbc4-3438-412c-a4d8-6c5c91947576")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 70.1742 106.68 0)
+			(at 70.1742 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5007,7 +5007,7 @@
 	)
 	(global_label "CANH"
 		(shape input)
-		(at 76.2 66.04 0)
+		(at 190.5 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5017,7 +5017,7 @@
 		)
 		(uuid "57f81c73-54b6-40a1-9f03-6f771bbd1b6b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 84.2048 66.04 0)
+			(at 198.5048 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5095,7 +5095,7 @@
 	)
 	(global_label "NRST"
 		(shape input)
-		(at 60.96 101.6 0)
+		(at 60.96 111.76 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5105,7 +5105,7 @@
 		)
 		(uuid "6c85c17b-a507-47c9-86c5-de3054b088e2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 68.7228 101.6 0)
+			(at 68.7228 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5227,7 +5227,7 @@
 	)
 	(global_label "CAN_TX"
 		(shape input)
-		(at 50.8 63.5 180)
+		(at 165.1 127 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5237,7 +5237,7 @@
 		)
 		(uuid "8b39268e-2b69-4857-bed1-4063d8cedabc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 40.981 63.5 0)
+			(at 155.281 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5271,7 +5271,7 @@
 	)
 	(global_label "CANL"
 		(shape input)
-		(at 165.1 78.74 180)
+		(at 54.61 91.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5281,7 +5281,7 @@
 		)
 		(uuid "9bb33d5e-0778-4089-8ab9-372a5db37325")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 157.3976 78.74 0)
+			(at 46.9076 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5315,7 +5315,7 @@
 	)
 	(global_label "CANL"
 		(shape input)
-		(at 76.2 71.12 0)
+		(at 190.5 134.62 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5325,7 +5325,7 @@
 		)
 		(uuid "ae258859-ae17-4812-8390-7bc3da6887f6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 83.9024 71.12 0)
+			(at 198.2024 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5337,7 +5337,7 @@
 	)
 	(global_label "SWO"
 		(shape input)
-		(at 60.96 111.76 0)
+		(at 60.96 121.92 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5347,7 +5347,7 @@
 		)
 		(uuid "b22d2539-2688-47da-96e4-0fc7c4d50bc7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 67.9366 111.76 0)
+			(at 67.9366 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5447,7 +5447,7 @@
 	)
 	(global_label "NRST"
 		(shape input)
-		(at 50.8 144.78 270)
+		(at 50.8 154.94 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5457,7 +5457,7 @@
 		)
 		(uuid "bea3c9bc-a6aa-4be2-94fa-6f9fa0153dcd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 152.5428 90)
+			(at 50.8 162.7028 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5579,22 +5579,22 @@
 	)
 	(global_label "STATUS_LED"
 		(shape input)
-		(at 152.4 120.65 180)
+		(at 54.61 63.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "c5e11cf5-73bd-4308-97d9-84f969ae2908")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 138.2268 120.65 0)
+			(at 68.7832 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5667,7 +5667,7 @@
 	)
 	(global_label "BOOT"
 		(shape input)
-		(at 63.5 139.7 90)
+		(at 63.5 149.86 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5677,7 +5677,7 @@
 		)
 		(uuid "da95fd6c-f19f-4119-8a68-df471a90e359")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 131.8162 90)
+			(at 63.5 141.9762 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5895,7 +5895,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0ac1f2bb-a022-4073-9b06-b958cedb1010")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR020"
 			(at 158.75 88.9 0)
 			(effects
 				(font
@@ -5946,7 +5946,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR023")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -5962,7 +5962,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0bb4926a-671b-4f80-a1f8-73ffe98516c0")
-		(property "Reference" "U4"
+		(property "Reference" "U3"
 			(at 119.0341 137.16 0)
 			(effects
 				(font
@@ -6164,7 +6164,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "U4")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -6180,7 +6180,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0fd18399-b744-4e04-94de-22e419b542e1")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR02"
 			(at 38.1 27.94 0)
 			(effects
 				(font
@@ -6230,7 +6230,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR03")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -6246,7 +6246,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0fe31a4c-6c4e-48f9-b918-22ed1280b99f")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR038"
 			(at 241.3 77.47 0)
 			(effects
 				(font
@@ -6296,7 +6296,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR036")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -6312,7 +6312,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1363d34b-3a2d-48ab-906c-6038cc28c18b")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR016"
 			(at 130.81 190.5 0)
 			(effects
 				(font
@@ -6363,7 +6363,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR020")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -6371,7 +6371,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 50.8 139.7 0)
+		(at 50.8 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6379,8 +6379,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "136e49e1-3110-4828-8923-9cfc19ed4088")
-		(property "Reference" "#PWR08"
-			(at 50.8 143.51 0)
+		(property "Reference" "#PWR06"
+			(at 50.8 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6389,7 +6389,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 50.8 134.62 0)
+			(at 50.8 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6397,7 +6397,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 139.7 0)
+			(at 50.8 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6406,7 +6406,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 139.7 0)
+			(at 50.8 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6415,7 +6415,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 50.8 139.7 0)
+			(at 50.8 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6429,7 +6429,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR08")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -6445,7 +6445,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "152d5822-2bf8-415d-9e39-23e6146dbb29")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR022"
 			(at 158.75 101.6 0)
 			(effects
 				(font
@@ -6496,7 +6496,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR025")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -6512,7 +6512,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a428874-3580-4564-ac73-4c699aebcc4f")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR033"
 			(at 215.9 110.49 0)
 			(effects
 				(font
@@ -6562,7 +6562,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR037")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -6578,7 +6578,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1ae6028d-cbfc-4096-9723-f3e7ae7463cf")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR034"
 			(at 215.9 142.24 0)
 			(effects
 				(font
@@ -6628,7 +6628,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR039")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -6644,7 +6644,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c6f350f-84f7-41ac-8028-13dbd36536b7")
-		(property "Reference" "Q2"
+		(property "Reference" "Q3"
 			(at 254 118.11 90)
 			(effects
 				(font
@@ -6711,7 +6711,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "Q2")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -6806,7 +6806,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "22b7d0de-9acd-4651-837c-fdda93d10190")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR03"
 			(at 50.8 46.99 0)
 			(effects
 				(font
@@ -6856,7 +6856,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR05")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -6938,7 +6938,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2374f513-fa81-4af9-9e4b-b6458f321e8c")
-		(property "Reference" "C6"
+		(property "Reference" "C5"
 			(at 129.54 30.4862 0)
 			(effects
 				(font
@@ -7001,7 +7001,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C6")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -7154,7 +7154,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 63.5 78.74 0)
+		(at 177.8 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7162,8 +7162,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2a2b9ed0-7c41-4e1e-bfc4-4b43537dbd8a")
-		(property "Reference" "#PWR011"
-			(at 63.5 85.09 0)
+		(property "Reference" "#PWR026"
+			(at 177.8 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7172,7 +7172,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 63.5 83.82 0)
+			(at 177.8 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7180,7 +7180,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 78.74 0)
+			(at 177.8 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7189,7 +7189,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 78.74 0)
+			(at 177.8 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7198,7 +7198,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 63.5 78.74 0)
+			(at 177.8 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7212,7 +7212,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR011")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -7228,7 +7228,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2aafea15-aa4b-4339-9a90-0bf1cb6699cd")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR018"
 			(at 156.21 50.8 0)
 			(effects
 				(font
@@ -7279,7 +7279,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR021")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -7287,7 +7287,7 @@
 	)
 	(symbol
 		(lib_id "Interface_CAN_LIN:MCP2551-I-SN")
-		(at 63.5 68.58 0)
+		(at 177.8 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7295,8 +7295,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2dd2e061-c08a-48ba-bfed-8c2daf0c8924")
-		(property "Reference" "U2"
-			(at 65.6941 55.88 0)
+		(property "Reference" "U4"
+			(at 179.9941 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7305,7 +7305,7 @@
 			)
 		)
 		(property "Value" "MCP2551-I-SN"
-			(at 65.6941 58.42 0)
+			(at 179.9941 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7314,7 +7314,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 63.5 81.28 0)
+			(at 177.8 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7324,7 +7324,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/devicedoc/21667d.pdf"
-			(at 63.5 68.58 0)
+			(at 177.8 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7333,7 +7333,7 @@
 			)
 		)
 		(property "Description" "High-Speed CAN Transceiver, 1Mbps, 5V supply, SOIC-8"
-			(at 63.5 68.58 0)
+			(at 177.8 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7342,7 +7342,7 @@
 			)
 		)
 		(property "MPN" "C49558"
-			(at 63.5 68.58 0)
+			(at 177.8 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7377,7 +7377,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "U2")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -7385,7 +7385,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 172.72 120.65 90)
+		(at 34.29 63.5 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7393,8 +7393,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2e367557-e6d9-4edd-ad0c-b9782bf86d95")
-		(property "Reference" "#PWR027"
-			(at 179.07 120.65 0)
+		(property "Reference" "#PWR01"
+			(at 27.94 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7403,7 +7403,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 176.53 120.6499 90)
+			(at 30.48 63.5001 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7412,7 +7412,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 172.72 120.65 0)
+			(at 34.29 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7421,7 +7421,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 172.72 120.65 0)
+			(at 34.29 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7430,7 +7430,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 172.72 120.65 0)
+			(at 34.29 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7444,7 +7444,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR027")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -7535,7 +7535,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 50.8 96.52 0)
+		(at 50.8 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7543,8 +7543,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "37559cb6-d01b-4dfe-bcb7-b333a0ac2823")
-		(property "Reference" "#PWR06"
-			(at 50.8 100.33 0)
+		(property "Reference" "#PWR04"
+			(at 50.8 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7553,7 +7553,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 50.8 91.44 0)
+			(at 50.8 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7561,7 +7561,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 96.52 0)
+			(at 50.8 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7570,7 +7570,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 96.52 0)
+			(at 50.8 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7579,7 +7579,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 50.8 96.52 0)
+			(at 50.8 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7593,7 +7593,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR06")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -7601,7 +7601,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 63.5 58.42 0)
+		(at 177.8 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7609,8 +7609,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3874cbbe-2038-492b-8dc4-020876755e5f")
-		(property "Reference" "#PWR010"
-			(at 63.5 62.23 0)
+		(property "Reference" "#PWR025"
+			(at 177.8 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7619,7 +7619,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 63.5 53.34 0)
+			(at 177.8 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7627,7 +7627,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 58.42 0)
+			(at 177.8 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7636,7 +7636,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 58.42 0)
+			(at 177.8 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7645,7 +7645,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 63.5 58.42 0)
+			(at 177.8 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7659,7 +7659,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR010")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -7675,7 +7675,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "39bf0dbe-a78b-4f7e-af79-ad09861a2fcc")
-		(property "Reference" "J5"
+		(property "Reference" "J6"
 			(at 96.52 189.2299 0)
 			(effects
 				(font
@@ -7726,7 +7726,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J5")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -7742,7 +7742,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "3a446fa4-fb89-4bfb-a584-972185e7f616")
-		(property "Reference" "J7"
+		(property "Reference" "J8"
 			(at 171.45 50.7999 0)
 			(effects
 				(font
@@ -7796,7 +7796,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J7")
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -7804,7 +7804,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 31.75 76.2 0)
+		(at 190.5 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7812,8 +7812,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3c0048bc-37d2-4ad8-a73d-2b2222a7f7f8")
-		(property "Reference" "#PWR02"
-			(at 31.75 82.55 0)
+		(property "Reference" "#PWR028"
+			(at 190.5 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7822,7 +7822,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 31.75 81.28 0)
+			(at 190.5 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7830,7 +7830,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 31.75 76.2 0)
+			(at 190.5 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7839,7 +7839,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 76.2 0)
+			(at 190.5 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7848,7 +7848,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 31.75 76.2 0)
+			(at 190.5 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7862,7 +7862,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR02")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -7878,7 +7878,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3d3d0007-bdcb-468e-996e-2cfdccc9d591")
-		(property "Reference" "J2"
+		(property "Reference" "J3"
 			(at 96.52 151.1299 0)
 			(effects
 				(font
@@ -7929,7 +7929,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J2")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -7945,7 +7945,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4a20ea35-e647-497c-be0b-37d20c6b2f8a")
-		(property "Reference" "J4"
+		(property "Reference" "J5"
 			(at 96.52 176.5299 0)
 			(effects
 				(font
@@ -7996,7 +7996,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J4")
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -8012,7 +8012,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b93aa45-fea1-47b2-865b-3f7878d1f0a1")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR019"
 			(at 166.37 53.34 0)
 			(effects
 				(font
@@ -8063,7 +8063,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR022")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -8158,7 +8158,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54024ca7-cc38-45fd-8a06-f2e66f827d87")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR07"
 			(at 63.5 27.94 0)
 			(effects
 				(font
@@ -8208,7 +8208,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR09")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -8224,7 +8224,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "541b5cec-0c70-4ed2-ac95-d8af2dfb1f11")
-		(property "Reference" "U3"
+		(property "Reference" "U2"
 			(at 76.2 19.05 0)
 			(effects
 				(font
@@ -8289,7 +8289,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "U3")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -8305,7 +8305,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "56fdf7b7-9f1f-414f-874f-ee0e78acac52")
-		(property "Reference" "C10"
+		(property "Reference" "C9"
 			(at 180.34 30.4862 0)
 			(effects
 				(font
@@ -8368,7 +8368,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C10")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -8384,7 +8384,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5b60d884-2042-45c3-b65a-f5b427783219")
-		(property "Reference" "Q3"
+		(property "Reference" "Q2"
 			(at 215.9 149.86 90)
 			(effects
 				(font
@@ -8451,7 +8451,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "Q3")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -8467,7 +8467,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "60ba835e-6615-41c7-a193-bfd5947d7f41")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR013"
 			(at 114.3 44.45 0)
 			(effects
 				(font
@@ -8517,7 +8517,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR017")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -8533,7 +8533,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62029760-50a2-4775-8003-8c353f241cb5")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR024"
 			(at 177.8 29.21 0)
 			(effects
 				(font
@@ -8583,7 +8583,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR028")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -8599,7 +8599,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "635db91c-6b0e-4cd0-ad73-a8809bb26786")
-		(property "Reference" "C2"
+		(property "Reference" "C1"
 			(at 40.64 30.4862 0)
 			(effects
 				(font
@@ -8608,7 +8608,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "10u >24V"
 			(at 40.64 33.0262 0)
 			(effects
 				(font
@@ -8617,7 +8617,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 38.1 31.75 0)
 			(effects
 				(font
@@ -8644,7 +8644,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "C15525"
+		(property "MPN" "C440198"
 			(at 38.1 31.75 0)
 			(effects
 				(font
@@ -8662,7 +8662,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C2")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -8825,7 +8825,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "68d366a7-fe0f-499a-ac17-dfb49df6318f")
-		(property "Reference" "J8"
+		(property "Reference" "J9"
 			(at 171.45 63.4999 0)
 			(effects
 				(font
@@ -8879,7 +8879,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J8")
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -8895,7 +8895,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ba41ff1-26ea-4bf9-9fd3-89f10cb99c4b")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR021"
 			(at 168.91 91.44 0)
 			(effects
 				(font
@@ -8946,7 +8946,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR024")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -8962,7 +8962,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ceecca7-6c54-4faf-8f78-46f6efe1ed3d")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR035"
 			(at 228.6 52.07 0)
 			(effects
 				(font
@@ -9012,7 +9012,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR033")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -9020,7 +9020,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 156.21 120.65 90)
+		(at 50.8 63.5 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9028,8 +9028,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6e48dd73-2923-4b07-a29d-b4db0e8ad193")
-		(property "Reference" "R4"
-			(at 156.21 115.57 90)
+		(property "Reference" "R1"
+			(at 50.8 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9037,7 +9037,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 156.21 118.11 90)
+			(at 50.8 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9045,7 +9045,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 156.21 120.65 0)
+			(at 50.8 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9054,7 +9054,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 156.21 120.65 0)
+			(at 50.8 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9063,7 +9063,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 156.21 120.65 0)
+			(at 50.8 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9072,7 +9072,7 @@
 			)
 		)
 		(property "MPN" "C11702"
-			(at 156.21 120.65 0)
+			(at 50.8 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9089,7 +9089,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "R4")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -9184,7 +9184,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "73b8d929-a1af-4a4e-88dc-a667bf805425")
-		(property "Reference" "C4"
+		(property "Reference" "C3"
 			(at 91.44 30.4862 0)
 			(effects
 				(font
@@ -9247,7 +9247,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C4")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -9463,7 +9463,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_ARM_SWD_TagConnect_TC2030-NL")
-		(at 53.34 106.68 0)
+		(at 53.34 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9472,7 +9472,7 @@
 		(fields_autoplaced yes)
 		(uuid "7c5ed28c-b8b6-4657-96eb-e6092aa71ce4")
 		(property "Reference" "J1"
-			(at 46.99 105.4099 0)
+			(at 46.99 115.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9481,7 +9481,7 @@
 			)
 		)
 		(property "Value" "Conn_ARM_SWD_TagConnect_TC2030-NL"
-			(at 46.99 107.9499 0)
+			(at 46.99 118.1099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9490,7 +9490,7 @@
 			)
 		)
 		(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
-			(at 53.34 124.46 0)
+			(at 53.34 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9499,7 +9499,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf"
-			(at 53.34 121.92 0)
+			(at 53.34 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9508,7 +9508,7 @@
 			)
 		)
 		(property "Description" "Tag-Connect ARM Cortex SWD JTAG connector, 6 pin, no legs"
-			(at 53.34 106.68 0)
+			(at 53.34 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9553,7 +9553,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8260138d-d6bb-46b0-825b-cd20b46cc972")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR036"
 			(at 228.6 77.47 0)
 			(effects
 				(font
@@ -9603,7 +9603,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR034")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -9698,7 +9698,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9041ffec-46dc-40d6-a195-d515b1a37920")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR011"
 			(at 82.55 177.8 0)
 			(effects
 				(font
@@ -9749,7 +9749,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR015")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -9765,7 +9765,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9072c521-c0ea-4def-a918-a4847a4b373e")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR010"
 			(at 88.9 27.94 0)
 			(effects
 				(font
@@ -9815,7 +9815,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR014")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -9831,7 +9831,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "926836d8-5c86-4b0d-a4c1-43f25029e895")
-		(property "Reference" "J6"
+		(property "Reference" "J7"
 			(at 134.62 189.2299 0)
 			(effects
 				(font
@@ -9882,7 +9882,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J6")
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -9898,7 +9898,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "948e2b3d-f1d4-4bdc-acb6-b5d09a8df34a")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR09"
 			(at 76.2 46.99 0)
 			(effects
 				(font
@@ -9948,7 +9948,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR013")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -9964,7 +9964,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9afbed5b-3a74-4c62-aaf5-d75841af50fe")
-		(property "Reference" "C5"
+		(property "Reference" "C4"
 			(at 116.84 30.4862 0)
 			(effects
 				(font
@@ -10027,7 +10027,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C5")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -10101,7 +10101,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 50.8 142.24 180)
+		(at 50.8 152.4 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10109,8 +10109,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9f7656d2-511e-441f-a4a5-8e24a6c5310d")
-		(property "Reference" "R2"
-			(at 53.34 140.9699 0)
+		(property "Reference" "R3"
+			(at 53.34 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10119,7 +10119,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 53.34 143.5099 0)
+			(at 53.34 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10128,7 +10128,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 50.8 142.24 0)
+			(at 50.8 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10137,7 +10137,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 50.8 142.24 0)
+			(at 50.8 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10146,7 +10146,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 50.8 142.24 0)
+			(at 50.8 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10155,7 +10155,7 @@
 			)
 		)
 		(property "MPN" "C25744"
-			(at 50.8 142.24 0)
+			(at 50.8 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10172,7 +10172,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "R2")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -10188,7 +10188,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a2f2f14a-0873-40c2-8e75-1a011eacb987")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR023"
 			(at 168.91 104.14 0)
 			(effects
 				(font
@@ -10239,7 +10239,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR026")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -10255,7 +10255,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a508ee66-cf58-4099-929d-0567b93d43dc")
-		(property "Reference" "C7"
+		(property "Reference" "C6"
 			(at 142.24 30.4862 0)
 			(effects
 				(font
@@ -10318,7 +10318,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C7")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -10326,7 +10326,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 46.99 73.66 90)
+		(at 161.29 137.16 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10334,8 +10334,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a57acc0e-cb8c-4e98-9b9a-b5ea522bb987")
-		(property "Reference" "R1"
-			(at 46.99 68.58 90)
+		(property "Reference" "R5"
+			(at 161.29 132.08 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10343,7 +10343,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 46.99 71.12 90)
+			(at 161.29 134.62 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10351,7 +10351,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 46.99 73.66 0)
+			(at 161.29 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10360,7 +10360,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 46.99 73.66 0)
+			(at 161.29 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10369,7 +10369,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 46.99 73.66 0)
+			(at 161.29 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10378,7 +10378,7 @@
 			)
 		)
 		(property "MPN" "C25744"
-			(at 46.99 73.66 0)
+			(at 161.29 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10395,7 +10395,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "R1")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -10479,7 +10479,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 31.75 63.5 0)
+		(at 190.5 25.4 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10487,8 +10487,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ad087e90-11f7-409e-bacc-07ad90c52176")
-		(property "Reference" "#PWR01"
-			(at 31.75 67.31 0)
+		(property "Reference" "#PWR027"
+			(at 190.5 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10497,7 +10497,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 31.75 58.42 0)
+			(at 190.5 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10505,7 +10505,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 31.75 63.5 0)
+			(at 190.5 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10514,7 +10514,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 63.5 0)
+			(at 190.5 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10523,7 +10523,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 31.75 63.5 0)
+			(at 190.5 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10537,7 +10537,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR01")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -10553,7 +10553,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b0f4dd75-89c2-4fe4-bc17-e156299a7b9b")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR015"
 			(at 114.3 146.05 0)
 			(effects
 				(font
@@ -10603,7 +10603,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR019")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -10611,7 +10611,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 31.75 69.85 0)
+		(at 190.5 31.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10619,8 +10619,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b1bb6ca4-d33c-4c28-8018-d13c0ea51126")
-		(property "Reference" "C1"
-			(at 34.29 68.5862 0)
+		(property "Reference" "C10"
+			(at 193.04 30.4862 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10629,7 +10629,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 34.29 71.1262 0)
+			(at 193.04 33.0262 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10638,7 +10638,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 31.75 69.85 0)
+			(at 190.5 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10647,7 +10647,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 31.75 69.85 0)
+			(at 190.5 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10656,7 +10656,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 31.75 69.85 0)
+			(at 190.5 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10665,7 +10665,7 @@
 			)
 		)
 		(property "MPN" "C1525"
-			(at 31.75 69.85 0)
+			(at 190.5 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10682,7 +10682,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C1")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -10698,7 +10698,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2a1b97e-5c8f-483a-b77a-da2b3d209cdb")
-		(property "Reference" "C8"
+		(property "Reference" "C7"
 			(at 154.94 30.4862 0)
 			(effects
 				(font
@@ -10761,7 +10761,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C8")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -10777,7 +10777,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c4aa152e-7266-44a7-8977-8de1539d8148")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR012"
 			(at 92.71 190.5 0)
 			(effects
 				(font
@@ -10828,7 +10828,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR016")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -10844,7 +10844,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ca91630e-c846-490d-a738-baca70fd4f50")
-		(property "Reference" "J3"
+		(property "Reference" "J4"
 			(at 96.52 163.8299 0)
 			(effects
 				(font
@@ -10895,7 +10895,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J3")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -10911,7 +10911,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cea9df3b-fe53-441b-bb4e-3eef32994c5c")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR037"
 			(at 241.3 52.07 0)
 			(effects
 				(font
@@ -10961,7 +10961,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR035")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -11048,7 +11048,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 170.18 78.74 180)
+		(at 59.69 91.44 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11056,8 +11056,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d62bf202-8a65-4bf7-967e-fd0541ad7747")
-		(property "Reference" "J9"
-			(at 171.45 76.1999 0)
+		(property "Reference" "J2"
+			(at 60.96 88.8999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11066,7 +11066,7 @@
 			)
 		)
 		(property "Value" "CAN Term"
-			(at 171.45 78.7399 0)
+			(at 60.96 91.4399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11075,7 +11075,7 @@
 			)
 		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm"
-			(at 170.18 78.74 0)
+			(at 59.69 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11084,7 +11084,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 170.18 78.74 0)
+			(at 59.69 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11093,7 +11093,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 170.18 78.74 0)
+			(at 59.69 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11102,7 +11102,7 @@
 			)
 		)
 		(property "MPN" ""
-			(at 170.18 78.74 0)
+			(at 59.69 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11119,7 +11119,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "J9")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -11206,7 +11206,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 50.8 116.84 0)
+		(at 50.8 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11214,8 +11214,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d792357c-d6db-49d0-bab8-dcc18170cb34")
-		(property "Reference" "#PWR07"
-			(at 50.8 123.19 0)
+		(property "Reference" "#PWR05"
+			(at 50.8 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11224,7 +11224,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 50.8 121.92 0)
+			(at 50.8 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11232,7 +11232,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 116.84 0)
+			(at 50.8 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11241,7 +11241,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 116.84 0)
+			(at 50.8 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11250,7 +11250,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 50.8 116.84 0)
+			(at 50.8 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11264,7 +11264,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR07")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -11280,7 +11280,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dbcec395-85d6-442f-9b5f-77000b0b79a5")
-		(property "Reference" "C9"
+		(property "Reference" "C8"
 			(at 167.64 30.4862 0)
 			(effects
 				(font
@@ -11343,7 +11343,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C9")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -11358,7 +11358,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dc5055ee-889a-4687-8c8f-7c3a8319f0b0")
-		(property "Reference" "C3"
+		(property "Reference" "C2"
 			(at 66.04 30.4862 0)
 			(effects
 				(font
@@ -11421,7 +11421,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "C3")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -11512,7 +11512,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 161.29 76.2 90)
+		(at 50.8 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11520,8 +11520,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e4f98a93-c094-41d4-9188-72ebd0cae399")
-		(property "Reference" "R5"
-			(at 161.29 71.12 90)
+		(property "Reference" "R2"
+			(at 50.8 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11529,7 +11529,7 @@
 			)
 		)
 		(property "Value" "120"
-			(at 161.29 73.66 90)
+			(at 50.8 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11537,7 +11537,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 161.29 76.2 0)
+			(at 50.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11546,7 +11546,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 161.29 76.2 0)
+			(at 50.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11555,7 +11555,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 161.29 76.2 0)
+			(at 50.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11564,7 +11564,7 @@
 			)
 		)
 		(property "MPN" "C25079"
-			(at 161.29 76.2 0)
+			(at 50.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11581,7 +11581,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "R5")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -11589,7 +11589,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_Small")
-		(at 168.91 120.65 180)
+		(at 38.1 63.5 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11597,7 +11597,7 @@
 		(dnp no)
 		(uuid "ed68c65e-abe9-45c8-afd6-5eb15ee7f1d3")
 		(property "Reference" "D1"
-			(at 168.8465 114.3 0)
+			(at 38.1635 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11605,7 +11605,7 @@
 			)
 		)
 		(property "Value" "STATUS LED RED"
-			(at 168.8465 116.84 0)
+			(at 38.1635 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11613,7 +11613,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 168.91 120.65 90)
+			(at 38.1 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11622,7 +11622,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 168.91 120.65 90)
+			(at 38.1 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11631,7 +11631,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode, small symbol"
-			(at 168.91 120.65 0)
+			(at 38.1 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11640,7 +11640,7 @@
 			)
 		)
 		(property "MPN" "C2286"
-			(at 168.91 120.65 0)
+			(at 38.1 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11673,7 +11673,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee61248a-6821-4155-b5ed-eb3caa68cd97")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR014"
 			(at 114.3 59.69 0)
 			(effects
 				(font
@@ -11723,7 +11723,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR018")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -11739,7 +11739,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "efb3efec-561d-4220-bdbc-3c9c119a4f31")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR039"
 			(at 254 110.49 0)
 			(effects
 				(font
@@ -11789,7 +11789,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR038")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -11797,7 +11797,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 63.5 142.24 180)
+		(at 63.5 152.4 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11805,8 +11805,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f3821a0f-564f-49c6-9474-cbeace74cca4")
-		(property "Reference" "R3"
-			(at 66.04 140.9699 0)
+		(property "Reference" "R4"
+			(at 66.04 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11815,7 +11815,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 66.04 143.5099 0)
+			(at 66.04 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11824,7 +11824,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 63.5 142.24 0)
+			(at 63.5 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11833,7 +11833,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 63.5 142.24 0)
+			(at 63.5 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11842,7 +11842,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 63.5 142.24 0)
+			(at 63.5 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11851,7 +11851,7 @@
 			)
 		)
 		(property "MPN" "C25744"
-			(at 63.5 142.24 0)
+			(at 63.5 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11868,7 +11868,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "R3")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -11876,7 +11876,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 43.18 73.66 270)
+		(at 157.48 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11884,8 +11884,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f97cf1aa-72e6-4538-a248-f980e8705df1")
-		(property "Reference" "#PWR04"
-			(at 36.83 73.66 0)
+		(property "Reference" "#PWR017"
+			(at 151.13 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11894,7 +11894,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 39.37 73.6599 90)
+			(at 153.67 137.1599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11903,7 +11903,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 43.18 73.66 0)
+			(at 157.48 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11912,7 +11912,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 43.18 73.66 0)
+			(at 157.48 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11921,7 +11921,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 43.18 73.66 0)
+			(at 157.48 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11935,7 +11935,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR04")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -11943,7 +11943,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 63.5 144.78 0)
+		(at 63.5 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11951,8 +11951,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f9cfe5ff-41e3-430a-8137-70bb51aad47b")
-		(property "Reference" "#PWR012"
-			(at 63.5 151.13 0)
+		(property "Reference" "#PWR08"
+			(at 63.5 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11961,7 +11961,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 63.5 149.86 0)
+			(at 63.5 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11969,7 +11969,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 144.78 0)
+			(at 63.5 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11978,7 +11978,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 144.78 0)
+			(at 63.5 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11987,7 +11987,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 63.5 144.78 0)
+			(at 63.5 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12001,7 +12001,7 @@
 		(instances
 			(project "canbus-sensor-board"
 				(path "/35a41683-6ea5-4004-a694-c6c84b7af467"
-					(reference "#PWR012")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
