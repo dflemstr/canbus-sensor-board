@@ -11367,7 +11367,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "10u >5V"
 			(at 66.04 33.0262 0)
 			(effects
 				(font
@@ -11376,7 +11376,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 63.5 31.75 0)
 			(effects
 				(font
@@ -11403,7 +11403,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "C15525"
+		(property "MPN" "C19702"
 			(at 63.5 31.75 0)
 			(effects
 				(font
