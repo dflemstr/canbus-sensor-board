@@ -12,11 +12,9 @@ pub const CAN_BITRATE: u32 = 1_000_000;
 pub const DEFAULT_CAN_ID: u16 = 1;
 
 pub const I2C1_BITRATE: time::Hertz = time::hz(500_000);
-pub const I2C1_TIMEOUT: embassy_time::Duration =
-    embassy_time::Duration::from_millis(100);
+pub const I2C1_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_millis(100);
 pub const I2C2_BITRATE: time::Hertz = time::hz(500_000);
-pub const I2C2_TIMEOUT: embassy_time::Duration =
-    embassy_time::Duration::from_millis(100);
+pub const I2C2_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_millis(100);
 
 /// Time between sensor polls if the value recently changed
 pub const POLL_DELAY_CHANGED: embassy_time::Duration = embassy_time::Duration::from_millis(10);
@@ -42,7 +40,3 @@ pub const ERROR_DELAY_BETWEEN_BLINK_GROUPS: embassy_time::Duration =
     embassy_time::Duration::from_millis(700);
 /// Number of times we will blink out the same error code before moving on.
 pub const ERROR_NUM_BLINK_GROUPS: u32 = 3;
-
-/// Delay between watchdog blinks
-pub const WATCHDOG_DELAY_BETWEEN_BLINKS: embassy_time::Duration =
-    embassy_time::Duration::from_millis(500);

@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use embassy_stm32::{can, flash, gpio, i2c, pac, peripherals};
+use embassy_stm32::{can, flash, gpio, i2c, pac, peripherals, wdg};
 use embassy_sync::mutex;
 // For link-time dependencies:
 use {defmt_rtt as _, panic_probe as _};
@@ -27,12 +27,13 @@ embassy_stm32::bind_interrupts!(struct Irqs {
 #[embassy_executor::main]
 async fn main(spawner: embassy_executor::Spawner) {
     // Store these as static so that they get `'static` lifetime and survive when `main()` exits
-    static G_LED: static_cell::StaticCell<leds::Led> = static_cell::StaticCell::new();
-    static Y_LED: static_cell::StaticCell<leds::Led> = static_cell::StaticCell::new();
+    static LED: static_cell::StaticCell<leds::Led> = static_cell::StaticCell::new();
     static SENSOR1: static_cell::StaticCell<sensors::Sensor1> = static_cell::StaticCell::new();
     static SENSOR1_CHANNEL: sensors::ReadingsChannel = sensors::ReadingsChannel::new();
     static SENSOR2: static_cell::StaticCell<sensors::Sensor2> = static_cell::StaticCell::new();
     static SENSOR2_CHANNEL: sensors::ReadingsChannel = sensors::ReadingsChannel::new();
+    static WDG: static_cell::StaticCell<wdg::IndependentWatchdog<peripherals::IWDG>> =
+        static_cell::StaticCell::new();
 
     // No special requirements, e.g. no external crystal
     let p = embassy_stm32::init(embassy_stm32::Config::default());
@@ -42,18 +43,13 @@ async fn main(spawner: embassy_executor::Spawner) {
 
     let flash = flash::Flash::new_blocking(p.FLASH);
 
-    let g_led = G_LED.init(mutex::Mutex::new(gpio::Output::new(
-        p.PB12,
-        gpio::Level::Low,
-        gpio::Speed::Low,
-    )));
-    let y_led = Y_LED.init(mutex::Mutex::new(gpio::Output::new(
-        p.PA12,
+    let led = LED.init(mutex::Mutex::new(gpio::Output::new(
+        p.PA2,
         gpio::Level::Low,
         gpio::Speed::Low,
     )));
 
-    let leds = leds::Leds::new(g_led, y_led);
+    let leds = leds::Leds::new(led);
 
     let can = can::Can::new(p.CAN, p.PB8, p.PB9, Irqs);
 
@@ -84,6 +80,8 @@ async fn main(spawner: embassy_executor::Spawner) {
     let sensor1 = SENSOR1.init(sensors::Sensor::new(i2c1));
     let sensor2 = SENSOR2.init(sensors::Sensor::new(i2c2));
 
+    let wdg = WDG.init(wdg::IndependentWatchdog::new(p.IWDG, 11_000));
+
     let signaller = status::LedsSignaller::new(leds, spawner);
 
     let core = core::Core::initialize(
@@ -97,10 +95,12 @@ async fn main(spawner: embassy_executor::Spawner) {
     )
     .await;
 
+    wdg.unleash();
+
     defmt::unwrap!(spawner.spawn(poll_sensor1(sensor1, SENSOR1_CHANNEL.sender(), signaller)));
     defmt::unwrap!(spawner.spawn(poll_sensor2(sensor2, SENSOR2_CHANNEL.sender(), signaller)));
     defmt::unwrap!(spawner.spawn(run_core(core)));
-    defmt::unwrap!(spawner.spawn(blink_watchdog(leds)));
+    defmt::unwrap!(spawner.spawn(pet_watchdog(wdg, leds)));
 
     // OK, all tasks started, now we go to sleep. Purely interrupt driven from here.
 }
@@ -130,8 +130,22 @@ async fn poll_sensor2(
 }
 
 #[embassy_executor::task]
-async fn blink_watchdog(leds: leds::Leds<'static>) {
+async fn pet_watchdog(
+    wdg: &'static mut wdg::IndependentWatchdog<'static, peripherals::IWDG>,
+    leds: leds::Leds<'static>,
+) {
+    let sleep_delay =
+        embassy_time::Duration::from_micros(10_000);
     loop {
-        leds.blink_watchdog().await;
+        for _ in 0..490 {
+            wdg.pet();
+            embassy_time::Timer::after(sleep_delay).await;
+        }
+        leds.blink_watchdog(true).await;
+        for _ in 0..10 {
+            wdg.pet();
+            embassy_time::Timer::after(sleep_delay).await;
+        }
+        leds.blink_watchdog(false).await;
     }
 }
