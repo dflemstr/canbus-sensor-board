@@ -85,7 +85,7 @@ where
         let enabled = config.contains(protocol::SensorConfig::Enable);
         let subscribed = config.contains(protocol::SensorConfig::Subscribe);
         defmt::info!(
-            "configuring sensor as kind={}, enabled={}, subscribed={}",
+            "configuring sensor as kind={}, enabled={=bool}, subscribed={=bool}",
             kind,
             enabled,
             subscribed,
@@ -133,7 +133,7 @@ where
                     if (prev_angle as i32 - angle as i32).abs() as u16
                         > config::SUBSCRIPTION_MIN_ANGLE_DELTA
                     {
-                        defmt::info!("new angle value: {}", angle);
+                        defmt::info!("new angle value: {=u16:#x}", angle);
                         readings.send(angle).await;
                         prev_angle = angle;
                     }

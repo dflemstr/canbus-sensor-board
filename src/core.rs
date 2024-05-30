@@ -84,9 +84,9 @@ where
                     }
 
                     defmt::debug!(
-                        "processing frame with id={} ts={}",
+                        "processing frame with id={=u16} ts={=u64:us}",
                         self.can_id.as_raw(),
-                        ts
+                        ts.as_micros()
                     );
                     let data = frame.data();
                     match self.handle_frame(data).await {
@@ -266,13 +266,13 @@ fn read_can_id(flash: &mut flash::Flash<flash::Blocking>, offset: u32) -> can::S
     let raw_id = if CAN_ID_CRC.checksum(&id_bytes) == crc {
         let id = u16::from_ne_bytes(id_bytes);
         defmt::debug!(
-            "stored CAN ID passed CRC validity check; using flash value {}",
+            "stored CAN ID passed CRC validity check; using flash value {=u16}",
             id
         );
         id
     } else {
         defmt::debug!(
-            "stored CAN ID did not pass CRC validity check; using default value {}",
+            "stored CAN ID did not pass CRC validity check; using default value {=u16}",
             config::DEFAULT_CAN_ID
         );
         config::DEFAULT_CAN_ID
@@ -314,7 +314,7 @@ fn read_sensor_config(
         let kind = protocol::SensorKind::from_u8(kind_byte)?;
         let config = protocol::SensorConfig::from_bits(config_byte)?;
         defmt::debug!(
-            "stored sensor config passed CRC validity check; using kind={}, enabled={}, subscribed={}",
+            "stored sensor config passed CRC validity check; using kind={}, enabled={=bool}, subscribed={=bool}",
             kind,
             config.contains(protocol::SensorConfig::Enable),
             config.contains(protocol::SensorConfig::Subscribe),
@@ -352,8 +352,7 @@ fn try_write(
             Err(())
         }
         Err(e) => {
-            defmt::error!("unable to persist data in flash: {}", e);
-            defmt::panic!()
+            defmt::panic!("unable to persist data in flash: {}", e)
         }
     }
 }

@@ -15,6 +15,11 @@ pub const I2C1_BITRATE: time::Hertz = time::hz(500_000);
 pub const I2C1_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_millis(100);
 pub const I2C2_BITRATE: time::Hertz = time::hz(500_000);
 pub const I2C2_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_millis(100);
+pub const WATCHDOG_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_micros(1000);
+pub const WATCHDOG_LED_BLINK_INTERVAL: embassy_time::Duration =
+    embassy_time::Duration::from_secs(5);
+pub const WATCHDOG_LED_ON_DURATION: embassy_time::Duration =
+    embassy_time::Duration::from_millis(100);
 
 /// Time between sensor polls if the value recently changed
 pub const POLL_DELAY_CHANGED: embassy_time::Duration = embassy_time::Duration::from_millis(10);
