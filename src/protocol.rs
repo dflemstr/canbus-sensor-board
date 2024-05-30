@@ -14,7 +14,7 @@
 //! | `0x03` |  S | v0 | v1 |    |    |    |    | A message with sensor readings from the specified sensor. |
 //! | `0x04` |  S |    |    |    |    |    |    | Read the value off of the specified sensor. This will generate a `SensorReading` response. |
 //! | `0x05` |id0 |id1 |  W |    |    |    |    | Update the CAN ID of this node; optionally persisting it. The following `Ok` response will use the new ID. Wait for the response before sending new messages, as messages will otherwise be ignored. |
-//! | `0x06` |  S | SK | SC |  W |    |    |    |
+//! | `0x06` |  S | SK | SC |  W |    |    |    | Configure the specified sensor. |
 //!
 //! Empty cell = Reserved byte, can be set to 0.<br>
 //! S = Byte of type `SensorId`<br>
