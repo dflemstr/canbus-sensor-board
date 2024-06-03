@@ -19,12 +19,14 @@ impl<'a> Leds<'a> {
 
 impl Leds<'static> {
     pub fn show_error_code(&self, spawner: embassy_executor::Spawner, blinks: u32) {
+        defmt::trace!("show_error_code blinks={=u32}", blinks);
         if let Err(err) = spawner.spawn(show_error_code(*self, blinks)) {
             defmt::warn!("could not spawn show_error_code: {}", err);
         }
     }
 
     pub async fn blink_watchdog(&self, level: bool) {
+        defmt::trace!("blink_watchdog level={=bool}", level);
         let mut led = self.led.lock().await;
         if level {
             led.set_level(gpio::Level::High);

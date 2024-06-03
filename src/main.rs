@@ -80,7 +80,7 @@ async fn main(spawner: embassy_executor::Spawner) {
     let sensor1 = SENSOR1.init(sensors::Sensor::new(i2c1));
     let sensor2 = SENSOR2.init(sensors::Sensor::new(i2c2));
 
-    let wdg_timeout_us = (config::WATCHDOG_TIMEOUT.as_micros() * 12 / 10) as u32;
+    let wdg_timeout_us = (config::WATCHDOG_TIMEOUT.as_micros() * 15 / 10) as u32;
     let wdg = WDG.init(wdg::IndependentWatchdog::new(p.IWDG, wdg_timeout_us));
 
     let signaller = status::LedsSignaller::new(leds, spawner);
@@ -139,14 +139,14 @@ async fn pet_watchdog(
     let pets_per_blink_period =
         config::WATCHDOG_LED_BLINK_INTERVAL.as_micros() / sleep_delay.as_micros();
     let pets_per_led_on = config::WATCHDOG_LED_ON_DURATION.as_micros() / sleep_delay.as_micros();
-    defmt::info!(
+    defmt::debug!(
         "starting to pet watchdog every {=u64:us}s (blink every {=u64:us}s for {=u64:us}s)",
         config::WATCHDOG_TIMEOUT.as_micros(),
         config::WATCHDOG_LED_BLINK_INTERVAL.as_micros(),
         config::WATCHDOG_LED_ON_DURATION.as_micros()
     );
-    defmt::debug!("pets_per_blink_period={=u64}", pets_per_blink_period);
-    defmt::debug!("pets_per_led_on={=u64}", pets_per_led_on);
+    defmt::trace!("pets_per_blink_period={=u64}", pets_per_blink_period);
+    defmt::trace!("pets_per_led_on={=u64}", pets_per_led_on);
     loop {
         for _ in 0..(pets_per_blink_period - pets_per_led_on) {
             wdg.pet();

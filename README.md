@@ -23,9 +23,10 @@ Flash using a debug probe (easiest):
     provided pads (see PCB design files for pin assignments) or else use a TagConnect TC2030-NL
     cable, which has pogo pins matching the pads on the board, and can be bought with adapter wires
     that are compatible with an ST-Link module.
-  * Run `cargo flash --release` to flash to the board **or** run `cargo run` to flash the firmware
-    using a debug build, start it, and stream debug logs to the terminal using the defmt RTT
-    protocol. (You can of course also do any combination, e.g. `cargo run --release` etc)
+  * Run `cargo flash --release --chip STM32F103C8 --connect-under-reset` to flash to the board **or**
+    run `cargo run` to flash the firmware using a debug build, start it, and stream debug logs to the
+    terminal using the defmt RTT protocol. (You can of course also do any combination, e.g.
+    `cargo run --release` etc)
 
 Flash using CAN bus (more tricky perhaps):
 
