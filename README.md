@@ -4,7 +4,7 @@ A simple board optimized for handling I²C-connected sensors and communicate the
 
 ![PCB render](./render.png)
 
-This repo contains both the PCB design files, as well as Rust-based firmware.
+This repo contains both the PCB design files, and Rust-based firmware.
 
 To flash and run the firmware:
 

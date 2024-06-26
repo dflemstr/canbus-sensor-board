@@ -3,9 +3,13 @@
 //! # Overview
 //!
 //! A CAN-bus message is up to 8 bytes long and will always use the ID of this device for all
-//! messages.
+//! messages.  Changing the CAN ID applies immediately and all following messages will use the
+//! new ID, including the resulting OK/ACK message.
 //!
-//! Here's the allowed combinations of 8 byte message payloads:
+//! Here's the allowed combinations of 8 byte message payloads.  Empty cells are reserved and
+//! should be omitted by CAN senders, by reducing the length of the CAN frame.  However, CAN
+//! receivers need to assume that received messages might be longer with trailing bytes for
+//! forwards compatibility.
 //!
 //! | B0     | B1 | B2 | B3 | B4 | B5 | B6 | B7 | Description |
 //! |--------|----------------------------------|-------------|
@@ -16,14 +20,19 @@
 //! | `0x05` |id0 |id1 |  W |    |    |    |    | Update the CAN ID of this node; optionally persisting it. The following `Ok` response will use the new ID. Wait for the response before sending new messages, as messages will otherwise be ignored. |
 //! | `0x06` |  S | SK | SC |  W |    |    |    | Configure the specified sensor. |
 //!
-//! Empty cell = Reserved byte, can be set to 0.<br>
-//! S = Byte of type `SensorId`<br>
-//! SK = Byte of type `SensorKind`<br>
-//! SC = Byte of type `SensorConfig`<br>
-//! E = Byte of type `ErrorCode`<br>
-//! W = Set to 1 to write the configuration persistently to flash. Can only be done once; the entire
-//!   chip needs to be mass-erased and re-programmed to reset the state.<br>
-//! `[id0, id1]` = 16-bit CAN-bus ID in big endian byte order.<br>
+//! B0 = Byte of type [`CanMessageKind`][], the discriminator values are used literally in the above
+//!   table. <br>
+//! Empty cell = Reserved byte, must be omitted by the writer by limiting CAN message length,
+//!   however old readers must tolerate new writers possibly sending longer messages with these
+//!   bytes populated.  It is safe to assume that an old message can always be handled correctly
+//!   even if ignoring the newer bytes; breaking changes to a message should use a new
+//!   [`CanMessageKind`][] instead of extending an old one.<br>
+//! S = Byte of type [`SensorId`][]<br>
+//! SK = Byte of type [`SensorKind`][]<br>
+//! SC = Byte of type [`SensorConfig`][]<br>
+//! E = Byte of type [`ErrorCode`][]<br>
+//! W = Set to 1 to write the configuration persistently to flash.<br>
+//! `[id0, id1]` = 12-bit CAN-bus ID padded with `0`s in big endian byte order.<br>
 //! `[v0, v1]` = 16-bit sensor reading in big endian byte order. Angles are represented from
 //!   `0x0000` to `0xffff` for a full rotation.<br>
 //!
@@ -61,10 +70,6 @@ pub enum ErrorCode {
     BadSensorIdParam = 5,
     BadSensorKindParam = 6,
     BadSensorConfigParam = 7,
-    /// The CAN ID can only be overwritten once per flash cycle; the chip must be mass-erased to
-    /// enable another write.
-    CanIdAlreadyWritten = 8,
-    SensorConfigAlreadyWritten = 9,
 }
 
 #[repr(u8)]
@@ -104,7 +109,7 @@ pub fn ok_frame(id: can::StandardId) -> can::Frame {
 pub fn error_frame(id: can::StandardId, error_code: ErrorCode) -> can::Frame {
     defmt::unwrap!(can::frame::Frame::new_data(
         id,
-        &[CanMessageKind::Error as u8, error_code as u8,]
+        &[CanMessageKind::Error as u8, error_code as u8]
     ))
 }
 

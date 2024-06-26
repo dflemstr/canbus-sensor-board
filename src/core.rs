@@ -33,19 +33,19 @@ impl<'a, S> Core<'a, S> {
 
         can.enable().await;
 
-        let can_id = read_can_id(&mut flash, config::CAN_ID_FLASH_OFFSET);
+        let can_id = read_can_id(&mut flash, config::flash_offset_can_id());
         configure_recv_filters(&mut can, can_id);
 
         defmt::debug!("check if we have persistent config for sensor 1...");
         if let Some((kind, config)) =
-            read_sensor_config(&mut flash, config::SENSOR1_CONFIG_FLASH_OFFSET)
+            read_sensor_config(&mut flash, config::flash_offset_sensor1())
         {
             sensor1.configure(kind, config).await;
         }
 
         defmt::debug!("check if we have persistent config for sensor 2...");
         if let Some((kind, config)) =
-            read_sensor_config(&mut flash, config::SENSOR2_CONFIG_FLASH_OFFSET)
+            read_sensor_config(&mut flash, config::flash_offset_sensor2())
         {
             sensor2.configure(kind, config).await;
         }
@@ -147,13 +147,8 @@ where
                     // Cheap check to avoid work
                     if self.can_id != id {
                         if persist == 1 {
-                            // First ensure id gets persisted. We can only write the ID once; the flash
-                            // must then be mass erased to enable another write.
-                            if write_can_id(&mut self.flash, config::CAN_ID_FLASH_OFFSET, id)
-                                .is_err()
-                            {
-                                return Err(protocol::ErrorCode::CanIdAlreadyWritten);
-                            }
+                            // First ensure id gets persisted.
+                            write_can_id(&mut self.flash, config::flash_offset_can_id(), id);
                         }
                         // ...before we convince ourselves that this is the new id.
                         self.can_id = id;
@@ -214,14 +209,14 @@ where
                             .handle_config_msg(
                                 rest,
                                 &mut self.flash,
-                                config::SENSOR1_CONFIG_FLASH_OFFSET,
+                                config::flash_offset_sensor1(),
                             )
                             .await?;
                         self.sensor2
                             .handle_config_msg(
                                 rest,
                                 &mut self.flash,
-                                config::SENSOR2_CONFIG_FLASH_OFFSET,
+                                config::flash_offset_sensor2(),
                             )
                             .await?;
                         Ok(())
@@ -234,7 +229,7 @@ where
                                     .handle_config_msg(
                                         rest,
                                         &mut self.flash,
-                                        config::SENSOR1_CONFIG_FLASH_OFFSET,
+                                        config::flash_offset_sensor1(),
                                     )
                                     .await
                             }
@@ -243,7 +238,7 @@ where
                                     .handle_config_msg(
                                         rest,
                                         &mut self.flash,
-                                        config::SENSOR2_CONFIG_FLASH_OFFSET,
+                                        config::flash_offset_sensor2(),
                                     )
                                     .await
                             }
@@ -258,6 +253,7 @@ where
 }
 
 fn read_can_id(flash: &mut flash::Flash<flash::Blocking>, offset: u32) -> can::StandardId {
+    defmt::trace!("reading can id from offset {=u32:x}", offset);
     let mut bytes = [0; flash::WRITE_SIZE];
     defmt::unwrap!(flash.blocking_read(offset, &mut bytes));
     let [id0, id1, crc0, crc1] = bytes;
@@ -281,15 +277,11 @@ fn read_can_id(flash: &mut flash::Flash<flash::Blocking>, offset: u32) -> can::S
     defmt::unwrap!(can::StandardId::new(raw_id))
 }
 
-fn write_can_id(
-    flash: &mut flash::Flash<flash::Blocking>,
-    offset: u32,
-    id: can::StandardId,
-) -> Result<(), ()> {
+fn write_can_id(flash: &mut flash::Flash<flash::Blocking>, offset: u32, id: can::StandardId) {
     // Store as 32 bit because flash write size is 4
     let id_bytes @ [id0, id1] = u16::from(id.as_raw()).to_ne_bytes();
     let [crc0, crc1] = CAN_ID_CRC.checksum(&id_bytes).to_ne_bytes();
-    try_write(flash, offset, [id0, id1, crc0, crc1])
+    write_flash(flash, offset, [id0, id1, crc0, crc1])
 }
 
 fn configure_recv_filters(can: &mut can::Can<peripherals::CAN>, id: can::StandardId) {
@@ -305,6 +297,8 @@ fn read_sensor_config(
     offset: u32,
 ) -> Option<(protocol::SensorKind, protocol::SensorConfig)> {
     use num_traits::FromPrimitive as _;
+
+    defmt::trace!("reading sensor config from offset {=u32:x}", offset);
 
     let mut bytes = [0; flash::WRITE_SIZE];
     defmt::unwrap!(flash.blocking_read(offset, &mut bytes));
@@ -331,28 +325,13 @@ pub fn write_sensor_config(
     offset: u32,
     kind: protocol::SensorKind,
     config: protocol::SensorConfig,
-) -> Result<(), ()> {
+) {
     let bytes @ [kind_byte, config_byte] = [kind as u8, config.bits()];
     let [crc0, crc1] = SENSOR_CONFIG_CRC.checksum(&bytes).to_ne_bytes();
-    try_write(flash, offset, [kind_byte, config_byte, crc0, crc1])
+    write_flash(flash, offset, [kind_byte, config_byte, crc0, crc1])
 }
 
-fn try_write(
-    flash: &mut flash::Flash<flash::Blocking>,
-    offset: u32,
-    data: [u8; 4],
-) -> Result<(), ()> {
-    match flash.blocking_write(offset, &data) {
-        Ok(()) => {
-            defmt::info!("data successfully written to flash");
-            Ok(())
-        }
-        Err(flash::Error::Seq) => {
-            defmt::warn!("did not manage to store data; it has has already been written once. Mass erase the chip to enable writing updated data.");
-            Err(())
-        }
-        Err(e) => {
-            defmt::panic!("unable to persist data in flash: {}", e)
-        }
-    }
+fn write_flash(flash: &mut flash::Flash<flash::Blocking>, offset: u32, data: [u8; 4]) {
+    defmt::unwrap!(flash.blocking_erase(offset, offset + data.len() as u32));
+    defmt::unwrap!(flash.blocking_write(offset, &data))
 }

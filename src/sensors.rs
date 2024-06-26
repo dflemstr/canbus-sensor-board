@@ -69,8 +69,7 @@ where
                 .ok_or(protocol::ErrorCode::BadSensorConfigParam)?;
 
             if persist == 1 {
-                crate::core::write_sensor_config(flash, flash_offset, sensor_kind, sensor_config)
-                    .map_err(|_| protocol::ErrorCode::SensorConfigAlreadyWritten)?;
+                crate::core::write_sensor_config(flash, flash_offset, sensor_kind, sensor_config);
             }
 
             self.configure(sensor_kind, sensor_config).await;

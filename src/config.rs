@@ -1,10 +1,26 @@
+use core::ptr;
 use embassy_stm32::{flash, time};
 
-// Store the values at the end of flash; very likely won't over-write application code.  But we
-// could tweak the linker script to not place code here if we want to be fool-proof.
-pub const SENSOR1_CONFIG_FLASH_OFFSET: u32 = (flash::FLASH_SIZE - 3 * flash::WRITE_SIZE) as u32;
-pub const SENSOR2_CONFIG_FLASH_OFFSET: u32 = (flash::FLASH_SIZE - 2 * flash::WRITE_SIZE) as u32;
-pub const CAN_ID_FLASH_OFFSET: u32 = (flash::FLASH_SIZE - 1 * flash::WRITE_SIZE) as u32;
+// Linker tricks to get unique addresses for these vars
+#[link_section = ".appconfig.sensor1"]
+static APPCONFIG_SENSOR1: u32 = 0xffff;
+#[link_section = ".appconfig.sensor2"]
+static APPCONFIG_SENSOR2: u32 = 0xffff;
+#[link_section = ".appconfig.can_id"]
+static APPCONFIG_CAN_ID: u32 = 0xffff;
+
+// These need to be functions because they need to use the linker to compute some values
+pub fn flash_offset_sensor1() -> u32 {
+    (ptr::addr_of!(APPCONFIG_SENSOR1) as usize - flash::FLASH_BASE) as u32
+}
+
+pub fn flash_offset_sensor2() -> u32 {
+    (ptr::addr_of!(APPCONFIG_SENSOR2) as usize - flash::FLASH_BASE) as u32
+}
+
+pub fn flash_offset_can_id() -> u32 {
+    (ptr::addr_of!(APPCONFIG_CAN_ID) as usize - flash::FLASH_BASE) as u32
+}
 
 pub const CAN_BITRATE: u32 = 1_000_000;
 
@@ -15,7 +31,7 @@ pub const I2C1_BITRATE: time::Hertz = time::hz(500_000);
 pub const I2C1_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_millis(100);
 pub const I2C2_BITRATE: time::Hertz = time::hz(500_000);
 pub const I2C2_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_millis(100);
-pub const WATCHDOG_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_micros(1000);
+pub const WATCHDOG_TIMEOUT: embassy_time::Duration = embassy_time::Duration::from_millis(100);
 pub const WATCHDOG_LED_BLINK_INTERVAL: embassy_time::Duration =
     embassy_time::Duration::from_secs(5);
 pub const WATCHDOG_LED_ON_DURATION: embassy_time::Duration =
