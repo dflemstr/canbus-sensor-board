@@ -1,25 +1,26 @@
 use core::ptr;
-use embassy_stm32::{flash, time};
-
-// Linker tricks to get unique addresses for these vars
-#[link_section = ".appconfig.sensor1"]
-static APPCONFIG_SENSOR1: u32 = 0xffff;
-#[link_section = ".appconfig.sensor2"]
-static APPCONFIG_SENSOR2: u32 = 0xffff;
-#[link_section = ".appconfig.can_id"]
-static APPCONFIG_CAN_ID: u32 = 0xffff;
+use embassy_stm32::time;
 
 // These need to be functions because they need to use the linker to compute some values
+pub fn flash_offset_can_id() -> u32 {
+    extern "C" {
+        static __appconfig0_start: u32;
+    }
+    unsafe { ptr::addr_of!(__appconfig0_start) as u32 }
+}
+
 pub fn flash_offset_sensor1() -> u32 {
-    (ptr::addr_of!(APPCONFIG_SENSOR1) as usize - flash::FLASH_BASE) as u32
+    extern "C" {
+        static __appconfig1_start: u32;
+    }
+    unsafe { ptr::addr_of!(__appconfig1_start) as u32 }
 }
 
 pub fn flash_offset_sensor2() -> u32 {
-    (ptr::addr_of!(APPCONFIG_SENSOR2) as usize - flash::FLASH_BASE) as u32
-}
-
-pub fn flash_offset_can_id() -> u32 {
-    (ptr::addr_of!(APPCONFIG_CAN_ID) as usize - flash::FLASH_BASE) as u32
+    extern "C" {
+        static __appconfig2_start: u32;
+    }
+    unsafe { ptr::addr_of!(__appconfig2_start) as u32 }
 }
 
 pub const CAN_BITRATE: u32 = 1_000_000;

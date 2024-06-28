@@ -143,22 +143,7 @@ where
                 if let &[id0, id1, persist, ..] = data {
                     let id = u16::from_be_bytes([id0, id1]);
                     let id = can::StandardId::new(id).ok_or(protocol::ErrorCode::BadCanIdParam)?;
-
-                    // Cheap check to avoid work
-                    if self.can_id != id {
-                        if persist == 1 {
-                            // First ensure id gets persisted.
-                            write_can_id(&mut self.flash, config::flash_offset_can_id(), id);
-                        }
-                        // ...before we convince ourselves that this is the new id.
-                        self.can_id = id;
-                        // ...and finally we ensure that any new messages received must have the new id.
-                        configure_recv_filters(&mut self.can, self.can_id);
-
-                        // At this point there might still be messages in the input registers that use
-                        // the old id, so we must manually filter by the current id when handling
-                        // subsequent messages.
-                    }
+                    self.set_can_id(id, persist == 1);
                     Ok(())
                 } else {
                     Err(protocol::ErrorCode::MessageTooShort)
@@ -250,6 +235,25 @@ where
             }
         }
     }
+
+    fn set_can_id(&mut self, id: can::StandardId, persist: bool) {
+
+        // Cheap check to avoid work
+        if self.can_id != id {
+            if persist {
+                // First ensure id gets persisted.
+                write_can_id(&mut self.flash, config::flash_offset_can_id(), id);
+            }
+            // ...before we convince ourselves that this is the new id.
+            self.can_id = id;
+            // ...and finally we ensure that any new messages received must have the new id.
+            configure_recv_filters(&mut self.can, self.can_id);
+
+            // At this point there might still be messages in the input registers that use
+            // the old id, so we must manually filter by the current id when handling
+            // subsequent messages.
+        }
+    }
 }
 
 fn read_can_id(flash: &mut flash::Flash<flash::Blocking>, offset: u32) -> can::StandardId {
@@ -278,7 +282,7 @@ fn read_can_id(flash: &mut flash::Flash<flash::Blocking>, offset: u32) -> can::S
 }
 
 fn write_can_id(flash: &mut flash::Flash<flash::Blocking>, offset: u32, id: can::StandardId) {
-    // Store as 32 bit because flash write size is 4
+    defmt::trace!("writing can id {=u16} to offset {=u32:x}", id.as_raw(), offset);
     let id_bytes @ [id0, id1] = u16::from(id.as_raw()).to_ne_bytes();
     let [crc0, crc1] = CAN_ID_CRC.checksum(&id_bytes).to_ne_bytes();
     write_flash(flash, offset, [id0, id1, crc0, crc1])
@@ -326,12 +330,14 @@ pub fn write_sensor_config(
     kind: protocol::SensorKind,
     config: protocol::SensorConfig,
 ) {
+    defmt::trace!("writing sensor config to offset {=u32:x}", offset);
     let bytes @ [kind_byte, config_byte] = [kind as u8, config.bits()];
     let [crc0, crc1] = SENSOR_CONFIG_CRC.checksum(&bytes).to_ne_bytes();
     write_flash(flash, offset, [kind_byte, config_byte, crc0, crc1])
 }
 
+// Erases the full sector starting at `offset` and writes `data` to the beginning of it.
 fn write_flash(flash: &mut flash::Flash<flash::Blocking>, offset: u32, data: [u8; 4]) {
-    defmt::unwrap!(flash.blocking_erase(offset, offset + data.len() as u32));
+    defmt::unwrap!(flash.blocking_erase(offset, offset + flash::MAX_ERASE_SIZE as u32));
     defmt::unwrap!(flash.blocking_write(offset, &data))
 }

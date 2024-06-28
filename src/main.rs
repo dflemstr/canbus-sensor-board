@@ -108,6 +108,7 @@ async fn main(spawner: embassy_executor::Spawner) {
 
 #[embassy_executor::task]
 async fn run_core(core: core::Core<'static, status::LedsSignaller>) {
+    defmt::debug!("starting to run core...");
     core.run_forever().await;
 }
 
